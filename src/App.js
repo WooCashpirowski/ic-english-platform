@@ -1,25 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import SeasonOne from "./pages/SeasonOne";
+import SeasonTwo from "./pages/SeasonTwo";
+import SeasonThree from "./pages/SeasonThree";
+import Lessons from "./pages/Lessons";
+import Error from "./pages/Error";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/season-1">
+          <SeasonOne />
+        </Route>
+        <Route path="/season-2">
+          <SeasonTwo />
+        </Route>
+        <Route path="/season-3">
+          <SeasonThree />
+        </Route>
+        <Route path="/lessons">
+          <Lessons />
+        </Route>
+        <Route path="*">
+          <Error />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
