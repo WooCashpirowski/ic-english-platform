@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import BackBtn from "./BackBtn";
 import HomeTrainer from "../assets/img/home-teacher.png";
@@ -25,7 +26,7 @@ const MainContainer = styled.main`
     .selection-item {
       transition: transform 0.2s cubic-bezier(0.47, 0, 0.745, 0.715);
       &:hover {
-        transform: rotate(5deg);
+        transform: rotate(calc(1deg * var(--i)));
       }
     }
   }
@@ -36,12 +37,12 @@ const Main = () => {
     <MainContainer>
       <BackBtn goto="/" />
       <div className="select main">
-        <a href="#" id="select-teacher" className="selection-item">
+        <Link to="/" className="selection-item" style={{ "--i": 3 }}>
           <img src={HomeTrainer} alt="trainer" />
-        </a>
-        <a href="#" id="select-lessons" className="selection-item">
+        </Link>
+        <Link to="/" className="selection-item" style={{ "--i": -5 }}>
           <img src={HomeLearner} alt="learner" />
-        </a>
+        </Link>
       </div>
       {/* <div className="select teacher hidden">
        <a href="#" className="back-btn">
