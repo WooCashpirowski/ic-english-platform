@@ -1,11 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import BackBtn from "./BackBtn";
-import HomeTrainer from "../assets/img/home-teacher.png";
-import HomeLearner from "../assets/img/home-student.png";
 
-const MainContainer = styled.main`
+const Container = styled.main`
   width: 100%;
   min-height: calc(100vh - 50px);
   height: 100%;
@@ -20,7 +17,6 @@ const MainContainer = styled.main`
     display: flex;
     justify-content: space-around;
     align-items: center;
-
     opacity: 1;
     transition: all 0.5s ease-out;
     .selection-item {
@@ -32,131 +28,41 @@ const MainContainer = styled.main`
   }
 `;
 
-const Main = () => {
+const Main = ({
+  img1,
+  img2,
+  alt1,
+  alt2,
+  style1,
+  style2,
+  goto1,
+  goto2,
+  state1,
+  state2,
+}) => {
   return (
-    <MainContainer>
-      <BackBtn goto="/" />
-      <div className="select main">
-        <Link to="/" className="selection-item" style={{ "--i": 3 }}>
-          <img src={HomeTrainer} alt="trainer" />
-        </Link>
-        <Link to="/" className="selection-item" style={{ "--i": -5 }}>
-          <img src={HomeLearner} alt="learner" />
-        </Link>
-      </div>
-      {/* <div className="select teacher hidden">
-       <a href="#" className="back-btn">
-         <i className="fas fa-arrow-left fa-2x"></i>
-       </a>
-       <a href="#" id="run-lessons" className="selection-item">
-         <img src="assets/img/run.png" alt="" />
-       </a>
-       <a href="#" id="learn-more" className="selection-item">
-         <img src="assets/img/learn.png" alt="" />
-       </a>
-     </div> */}
-      {/* <div className="select seasons hidden">
-        <a href="#" className="back-btn">
-          <i className="fas fa-arrow-left fa-2x"></i>
-        </a>
-        <div className="selection-card">
-          <h2>
-            Season 1<br />
-            A1
-          </h2>
-          <a href="a1.html" className="btn btn-light">
-            Go to Multimedia
-          </a>
-          <a
-            href="assets/resources/s01.zip"
-            className="btn btn-outline-light"
-            download
+    <>
+      <Container>
+        <div className="select main">
+          <Link
+            to={goto1}
+            className="selection-item"
+            style={style1}
+            onClick={state1}
           >
-            Lesson Plans & Worksheets
-          </a>
-        </div>
-        <div className="selection-card">
-          <h2>
-            Season 2<br />
-            A2
-          </h2>
-          <a href="a2.html" className="btn btn-light">
-            Go to Multimedia
-          </a>
-          <a
-            href="assets/resources/s02.zip"
-            className="btn btn-outline-light"
-            download
+            <img src={img1} alt={alt1} />
+          </Link>
+          <Link
+            to={goto2}
+            className="selection-item"
+            style={style2}
+            onClick={state2}
           >
-            Lesson Plans & Worksheets
-          </a>
+            <img src={img2} alt={alt2} />
+          </Link>
         </div>
-        <div className="selection-card">
-          <h2>
-            Season 3<br />
-            B1
-          </h2>
-          <a href="b1.html" className="btn btn-light">
-            Go to Multimedia
-          </a>
-          <a
-            href="assets/resources/s03.zip"
-            className="btn btn-outline-light"
-            download
-          >
-            Lesson Plans & Worksheets
-          </a>
-        </div>
-      </div>
-      <div className="select seasons-learner hidden">
-        <a href="#" className="back-btn">
-          <i className="fas fa-arrow-left fa-2x"></i>
-        </a>
-
-        <div className="selection-card">
-          <h2>
-            Season 1<br />
-            <span>A1</span>
-          </h2>
-          <a href="a1.html" className="btn btn-light">
-            Go to Multimedia
-          </a>
-        </div>
-        <div className="selection-card">
-          <h2>
-            Season 2<br />
-            <span>A2</span>
-          </h2>
-          <a href="a2.html" className="btn btn-light">
-            Go to Multimedia
-          </a>
-        </div>
-        <div className="selection-card">
-          <h2>
-            Season 3<br />
-            <span>B1</span>
-          </h2>
-          <a href="b1.html" className="btn btn-light">
-            Go to Multimedia
-          </a>
-        </div>
-      </div>
-      <div className="select teacher-section hidden">
-        <a href="#" className="back-btn">
-          <i className="fas fa-arrow-left fa-2x"></i>
-        </a>
-        <div className="selection-card card-2">
-          <a href="assets/resources/ebook_full.zip" download>
-            <h2>Teachers Manual</h2>
-          </a>
-        </div>
-        <div className="selection-card card-2">
-          <a href="lessons.html">
-            <h2>E-learning Lessons</h2>
-          </a>
-        </div>
-      </div> */}
-    </MainContainer>
+      </Container>
+    </>
   );
 };
 

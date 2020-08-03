@@ -6,20 +6,20 @@ import styled from "styled-components";
 const Button = styled.div`
   position: absolute;
   margin-left: 3.2rem;
-  top: 2rem;
+  top: 4.5rem;
   transition: transform 0.2s ease;
   z-index: 2;
   svg {
     font-size: 2.5rem;
   }
   &:hover {
-    transform: translateX(-2px);
+    transform: translateX(-4px);
   }
 `;
 
-const BackBtn = ({ goto, goBack }) => {
+const BackBtn = ({ goto }) => {
   return (
-    <Button onClick={goBack}>
+    <Button>
       <Link to={goto || "#"}>
         <MdArrowBack className="c-main" />
       </Link>

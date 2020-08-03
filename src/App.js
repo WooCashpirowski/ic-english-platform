@@ -1,10 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Trainer from "./pages/Trainer";
+import LearnMore from "./pages/LearnMore";
+import Learner from "./pages/Learner";
 import SeasonOne from "./pages/SeasonOne";
 import SeasonTwo from "./pages/SeasonTwo";
 import SeasonThree from "./pages/SeasonThree";
 import Lessons from "./pages/Lessons";
+import Seasons from "./pages/Seasons";
 import Error from "./pages/Error";
 
 function App() {
@@ -13,6 +17,18 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Home />
+        </Route>
+        <Route exact path="/trainer">
+          <Trainer />
+        </Route>
+        <Route path="/trainer/learn-more">
+          <LearnMore />
+        </Route>
+        <Route exact path="/learner">
+          <Learner />
+        </Route>
+        <Route exact path="/seasons">
+          <Seasons />
         </Route>
         <Route path="/season-1">
           <SeasonOne />
@@ -23,7 +39,7 @@ function App() {
         <Route path="/season-3">
           <SeasonThree />
         </Route>
-        <Route path="/lessons">
+        <Route path="/trainer/lessons">
           <Lessons />
         </Route>
         <Route path="*">
