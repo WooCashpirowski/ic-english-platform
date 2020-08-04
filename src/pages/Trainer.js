@@ -1,34 +1,36 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../context/context";
 import Footer from "../components/Footer";
 import Main from "../components/Main";
 import TopBar from "../components/TopBar";
 import BackBtn from "../components/BackBtn";
+import SelectionItem from "../components/SelectionItem";
 import RunLessons from "../assets/img/run.png";
 import Learn from "../assets/img/learn.png";
 
 const Trainer = () => {
-  const [isTrainer, setIsTrainer] = useState(false);
-  const setTrainer = (bool) => {
-    setIsTrainer(bool);
-    console.log(isTrainer);
-    return isTrainer;
-  };
-
+  const { setTrainer } = useContext(AppContext);
   return (
     <>
       <TopBar title="Trainer" />
-      <BackBtn goto="/" />
-      <Main
-        img1={RunLessons}
-        img2={Learn}
-        alt1="run-lessons"
-        alt2="learn-more"
-        style1={{ "--i": 1 }}
-        style2={{ "--i": -4 }}
-        goto1="/seasons"
-        goto2="/trainer/learn-more"
-        state1={(e) => setTrainer(true)}
-      />
+      <BackBtn goto="/" onClick={() => setTrainer(false)} />
+      <Main>
+        <SelectionItem
+          img={RunLessons}
+          alt="run lessons"
+          style={{ "--i": -2 }}
+          goto="/seasons"
+          state={() => {
+            setTrainer(true);
+          }}
+        />
+        <SelectionItem
+          img={Learn}
+          alt="learn more"
+          style={{ "--i": 3 }}
+          goto="/trainer/learn-more"
+        />
+      </Main>
       <Footer />
     </>
   );

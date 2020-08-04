@@ -1,9 +1,10 @@
 const seasonsData = [
   {
-    season: "s01",
+    season: "1",
+    level: "A1",
     episodes: [
       {
-        five: [
+        group: [
           {
             id: "s01e01",
             epNo: "Episode 1",
@@ -90,7 +91,7 @@ const seasonsData = [
         ],
       },
       {
-        ten: [
+        group: [
           {
             id: "s01e06",
             epNo: "Episode 6",
@@ -181,7 +182,7 @@ const seasonsData = [
         ],
       },
       {
-        fifteen: [
+        group: [
           {
             id: "s01e11",
             epNo: "Episode 11",
@@ -268,7 +269,7 @@ const seasonsData = [
         ],
       },
       {
-        twenty: [
+        group: [
           {
             id: "s01e16",
             epNo: "Episode 16",
@@ -356,7 +357,7 @@ const seasonsData = [
         ],
       },
       {
-        twentyFive: [
+        group: [
           {
             id: "s01e21",
             epNo: "Episode 21",
@@ -447,7 +448,7 @@ const seasonsData = [
         ],
       },
       {
-        thirty: [
+        group: [
           {
             id: "s01e26",
             epNo: "Episode 26",
@@ -556,10 +557,11 @@ const seasonsData = [
     ],
   },
   {
-    season: "s02",
+    season: "2",
+    level: "A2",
     episodes: [
       {
-        five: [
+        group: [
           {
             id: "s02e01",
             epNo: "Episode 1",
@@ -662,7 +664,7 @@ const seasonsData = [
         ],
       },
       {
-        ten: [
+        group: [
           {
             id: "s02e06",
             epNo: "Episode 6",
@@ -749,7 +751,7 @@ const seasonsData = [
         ],
       },
       {
-        fifteen: [
+        group: [
           {
             id: "s02e11",
             epNo: "Episode 11",
@@ -856,7 +858,7 @@ const seasonsData = [
         ],
       },
       {
-        twenty: [
+        group: [
           {
             id: "s02e16",
             epNo: "Episode 16",
@@ -955,7 +957,7 @@ const seasonsData = [
         ],
       },
       {
-        twentyFive: [
+        group: [
           {
             id: "s02e21",
             epNo: "Episode 21",
@@ -1054,7 +1056,7 @@ const seasonsData = [
         ],
       },
       {
-        thirty: [
+        group: [
           {
             id: "s02e26",
             epNo: "Episode 26",
@@ -1151,10 +1153,11 @@ const seasonsData = [
     ],
   },
   {
-    season: "s03",
+    season: "3",
+    level: "B1",
     episodes: [
       {
-        five: [
+        group: [
           {
             id: "s03e01",
             epNo: "Episode 1",
@@ -1265,7 +1268,7 @@ const seasonsData = [
         ],
       },
       {
-        ten: [
+        group: [
           {
             id: "s03e06",
             epNo: "Episode 6",
@@ -1364,7 +1367,7 @@ const seasonsData = [
         ],
       },
       {
-        fifteen: [
+        group: [
           {
             id: "s03e11",
             epNo: "Episode 11",
@@ -1459,7 +1462,7 @@ const seasonsData = [
         ],
       },
       {
-        twenty: [
+        group: [
           {
             id: "s03e16",
             epNo: "Episode 16",
@@ -1558,7 +1561,7 @@ const seasonsData = [
         ],
       },
       {
-        twentyFive: [
+        group: [
           {
             id: "s03e21",
             epNo: "Episode 21",
@@ -1657,7 +1660,7 @@ const seasonsData = [
         ],
       },
       {
-        thirty: [
+        group: [
           {
             id: "s03e26",
             epNo: "Episode 26",
