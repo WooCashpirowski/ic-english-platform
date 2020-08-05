@@ -1,7 +1,9 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
 const Multimedia = () => {
-  return <h1>hello from multimedia</h1>;
+  const { id } = useParams();
+  return <h1>hello from multimedia no: {id}</h1>;
 };
 
 export default Multimedia;

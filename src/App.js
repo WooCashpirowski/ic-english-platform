@@ -8,6 +8,7 @@ import Season from "./pages/Season";
 import Lessons from "./pages/Lessons";
 import Seasons from "./pages/Seasons";
 import Error from "./pages/Error";
+import Multimedia from "./pages/Multimedia";
 
 function App() {
   return (
@@ -31,10 +32,12 @@ function App() {
         <Route exact path="/seasons">
           <Seasons />
         </Route>
-        <Route path="/seasons/:id">
+        <Route exact path="/seasons/:id">
           <Season />
         </Route>
-
+        <Route path="/seasons/:id/:id">
+          <Multimedia />
+        </Route>
         <Route path="*">
           <Error />
         </Route>
