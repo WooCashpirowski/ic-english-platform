@@ -17,15 +17,18 @@ const FooterStyled = styled.footer`
     opacity: 1;
     transform: scale(1);
     transition: all 0.8s ease-in-out;
-  }
-
-  img {
-    width: 310px;
-    margin-left: -1.2rem;
-  }
-  .footer.hide {
-    opacity: 0;
-    transform: scale(0);
+    img {
+      width: 310px;
+      margin-left: -1.2rem;
+    }
+    @media (max-width: 768px) {
+      img {
+        width: 200px;
+      }
+      p {
+        font-size: 0.5rem;
+      }
+    }
   }
 `;
 
