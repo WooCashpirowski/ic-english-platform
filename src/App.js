@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Trainer from "./pages/Trainer";
 import LearnMore from "./pages/LearnMore";
-import Learner from "./pages/Learner";
 import Season from "./pages/Season";
 import Lessons from "./pages/Lessons";
 import Seasons from "./pages/Seasons";
@@ -25,9 +24,6 @@ function App() {
         </Route>
         <Route path="/trainer/lessons">
           <Lessons />
-        </Route>
-        <Route exact path="/learner">
-          <Learner />
         </Route>
         <Route exact path="/seasons">
           <Seasons />

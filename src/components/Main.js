@@ -19,6 +19,21 @@ const Container = styled.main`
     align-items: center;
     opacity: 1;
     transition: all 0.5s ease-out;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    @media (max-width: 550px) {
+      justify-content: flex-start;
+      padding-top: 4rem;
+      height: 100%;
+    }
+    @media (max-width: 960px) and (orientation: landscape) {
+      flex-direction: row;
+      justify-content: space-around;
+      padding-top: 3rem;
+    }
   }
 `;
 

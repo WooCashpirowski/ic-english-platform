@@ -52,6 +52,24 @@ const Container = styled.section`
       }
     }
   }
+  @media (max-width: 960px) and (orientation: landscape) {
+    .react-multi-carousel-list {
+      padding-top: 4rem;
+      .card {
+        height: 250px;
+        min-width: 250px;
+        max-width: 250px;
+        .card-title {
+          height: 230px;
+          width: 230px;
+          p {
+            font-size: 1.5rem;
+            padding: 0.5rem;
+          }
+        }
+      }
+    }
+  }
 `;
 
 const responsive = {
@@ -82,10 +100,6 @@ const Season = () => {
   const season = seasonsData.filter((season) => season.season === id);
   const { episodes } = season[0];
 
-  const groups = episodes.map((group) => {
-    return group.group;
-  });
-
   return (
     <>
       <TopBar title={`Season ${id}`} />
@@ -96,18 +110,14 @@ const Season = () => {
           keyBoardControl={true}
           focusOnSelect={true}
         >
-          {groups.map((group) =>
-            group.map((item) => {
-              return (
-                <div className="card" key={item.id}>
-                  <Link to={`/seasons/${id}/${item.id}`} className="card-title">
-                    <h1>{item.epNo}</h1>
-                    <p>{item.title}</p>
-                  </Link>
-                </div>
-              );
-            })
-          )}
+          {episodes.map((episode) => (
+            <div className="card" key={episode.id}>
+              <Link to={`/seasons/${id}/${episode.id}`} className="card-title">
+                <h1>{episode.epNo}</h1>
+                <p>{episode.title}</p>
+              </Link>
+            </div>
+          ))}
         </Carousel>
       </Container>
       <Footer />

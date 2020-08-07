@@ -15,6 +15,10 @@ const Button = styled.div`
   &:hover {
     transform: translateX(-4px);
   }
+
+  @media (max-width: 550px) {
+    margin-left: 1rem;
+  }
 `;
 
 const BackBtn = ({ goto }) => {

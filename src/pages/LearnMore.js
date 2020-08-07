@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../components/Footer";
 import Main from "../components/Main";
 import TopBar from "../components/TopBar";
 import BackBtn from "../components/BackBtn";
@@ -56,6 +55,22 @@ const Card = styled.div`
       transform: scale(0.97);
     }
   }
+  @media (max-width: 960px) and (orientation: landscape) {
+    width: 250px;
+    min-height: 250px;
+    margin: 0;
+    &::after {
+      height: 250px;
+      width: 250px;
+    }
+    a {
+      height: 220px;
+      width: 220px;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
 `;
 
 const LearnMore = () => {
@@ -78,7 +93,6 @@ const LearnMore = () => {
           </Link>
         </Card>
       </Main>
-      <Footer />
     </>
   );
 };

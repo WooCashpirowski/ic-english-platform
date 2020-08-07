@@ -29,6 +29,12 @@ const FooterStyled = styled.footer`
         font-size: 0.5rem;
       }
     }
+    @media (max-width: 960px) and (orientation: landscape) {
+      display: none;
+    }
+    @media (max-width: 550px) {
+      flex-direction: column;
+    }
   }
 `;
 

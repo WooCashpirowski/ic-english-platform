@@ -7,6 +7,23 @@ const Goto = styled.div`
   &:hover {
     transform: rotate(calc(1deg * var(--i)));
   }
+  @media (max-width: 768px) {
+    margin-top: 2rem;
+  }
+  @media (max-width: 550px) {
+    width: 350px;
+    margin-top: 1rem;
+
+    img {
+      width: 100%;
+    }
+  }
+  @media (max-width: 960px) and (orientation: landscape) {
+    width: 350px;
+    img {
+      width: 100%;
+    }
+  }
 `;
 
 const SelectionItem = ({ img, alt, style, goto, state }) => {

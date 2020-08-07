@@ -2,13 +2,12 @@ import React, { useContext } from "react";
 import { AppContext } from "../context/context";
 import Main from "../components/Main";
 import TopBar from "../components/TopBar";
-import Footer from "../components/Footer";
 import BackBtn from "../components/BackBtn";
 import styled from "styled-components";
 import seasonsData from "../seasonsData";
 import { Link } from "react-router-dom";
 
-const Card = styled.main`
+const Card = styled.div`
   min-height: 300px;
   min-width: 300px;
   align-items: center;
@@ -52,6 +51,27 @@ const Card = styled.main`
     font-size: 2.6rem;
     color: #fff;
   }
+  @media (max-width: 768px) {
+    margin: 0rem 1rem 1rem;
+  }
+  @media (max-width: 960px) and (orientation: landscape) {
+    min-height: 200px;
+    min-width: 200px;
+    &::after {
+      height: 200px;
+      width: 200px;
+    }
+    h2 {
+      font-size: 1.5rem;
+
+      span {
+        font-size: 2rem;
+      }
+    }
+    h1 {
+      font-size: 1.7rem;
+    }
+  }
 `;
 
 const Seasons = () => {
@@ -79,7 +99,6 @@ const Seasons = () => {
           </Card>
         ))}
       </Main>
-      <Footer />
     </>
   );
 };
