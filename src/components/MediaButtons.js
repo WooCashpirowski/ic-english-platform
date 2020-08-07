@@ -9,7 +9,7 @@ const Buttons = styled.div`
 
   .mm-btn {
     width: 150px;
-    height: 60px;
+    height: 100px;
     background: var(--color-main);
     color: #fff;
     text-transform: uppercase;
@@ -24,6 +24,7 @@ const Buttons = styled.div`
     margin: 0;
     .mm-btn {
       margin-bottom: 0;
+      height: 60px;
     }
   }
 `;
