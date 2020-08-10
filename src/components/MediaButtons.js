@@ -9,7 +9,7 @@ const Buttons = styled.div`
 
   .mm-btn {
     width: 150px;
-    height: 100px;
+    height: 80px;
     background: var(--color-main);
     color: #fff;
     text-transform: uppercase;
@@ -18,6 +18,38 @@ const Buttons = styled.div`
     align-items: center;
     font-weight: 500;
     margin: 1rem;
+    button {
+      width: 95%;
+      height: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(145deg, #344ca9, #2c408e);
+      font-family: inherit;
+      color: #fff;
+      border: none;
+      font-size: 18px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      &:hover {
+        background: linear-gradient(-145deg, #344ca9, #2c408e);
+      }
+      &:active {
+        background: linear-gradient(-145deg, #344ca9, #2c408e);
+        transform: scale(0.97);
+      }
+      p {
+        pointer-events: none;
+      }
+    }
+    &.active {
+      background: #fff;
+    }
+    &.active button {
+      background: linear-gradient(45deg, #d5d2d2, #fef9f9);
+      color: var(--color-main);
+    }
     @media (max-width: 1280px) {
       margin-bottom: 0;
       height: 60px;

@@ -10,7 +10,10 @@ const Wrapper = styled.article`
   background: var(--color-main);
   margin: 0 1rem;
   transform: scale(0.95);
-
+  display: none;
+  &.active {
+    display: block;
+  }
   .i-frame {
     position: absolute;
     top: 0;
@@ -84,9 +87,9 @@ const Wrapper = styled.article`
   }
 `;
 
-const MediaWrapper = ({ location, title }) => {
+const MediaWrapper = ({ location, title, id, styleClass }) => {
   return (
-    <Wrapper>
+    <Wrapper id={id} className={styleClass}>
       <Iframe
         url={location}
         frameBorder="0"

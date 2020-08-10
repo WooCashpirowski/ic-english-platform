@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import seasonsData from "../seasonsData";
 import BackBtn from "../components/BackBtn";
@@ -33,6 +33,13 @@ const Multimedia = () => {
 
   const url = "http://ic-english.eu/platforma/assets";
 
+  const [activeContent, setActiveContent] = useState("");
+
+  const setContent = function (e) {
+    setActiveContent(e.target.dataset.id);
+    return activeContent;
+  };
+
   return (
     <>
       <TopBar title={title} />
@@ -40,12 +47,26 @@ const Multimedia = () => {
       <Container>
         <MediaButtons>
           {media.map((item) => (
-            <div className="mm-btn" key={item.id}>
-              <p>{item.id}</p>
+            <div
+              className={activeContent === item.id ? "mm-btn active" : "mm-btn"}
+              key={item.id}
+            >
+              <button className="title" data-id={item.id} onClick={setContent}>
+                <p>{item.id}</p>
+              </button>
             </div>
           ))}
         </MediaButtons>
-        <MediaWrapper location={`${url}${media[0].location}`} />
+        {media.map((item) => {
+          return (
+            <MediaWrapper
+              styleClass={activeContent === item.id && "active"}
+              key={item.id}
+              id={item.id}
+              location={`${url}${item.location}`}
+            />
+          );
+        })}
       </Container>
     </>
   );
