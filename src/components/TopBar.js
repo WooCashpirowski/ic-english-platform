@@ -9,7 +9,7 @@ const Nav = styled.header`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  z-index: 3;
+  z-index: 0;
   nav {
     height: 50px;
     background: rgb(49, 71, 158);
@@ -26,13 +26,18 @@ const Nav = styled.header`
       text-align: center;
       margin-top: 0.5rem;
     }
+    @media (max-width: 768px) {
+      .logo img {
+        width: 100px;
+      }
+    }
     @media (max-width: 550px) {
       display: flex;
       justify-content: center;
       align-items: center;
       .logo img {
         position: initial;
-        margin-top: 2rem;
+        margin-top: 1rem;
       }
       h1 {
         display: none;

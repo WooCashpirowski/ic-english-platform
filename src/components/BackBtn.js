@@ -16,8 +16,16 @@ const Button = styled.div`
     transform: translateX(-4px);
   }
 
-  @media (max-width: 550px) {
+  @media (max-width: 651px) {
     margin-left: 1rem;
+    top: 4rem;
+  }
+  @media (max-width: 550px) {
+    top: 0.3rem;
+    z-index: 4;
+    svg {
+      color: #fff;
+    }
   }
 `;
 
