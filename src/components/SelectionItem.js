@@ -8,11 +8,10 @@ const Goto = styled.div`
     transform: rotate(calc(1deg * var(--i)));
   }
   @media (max-width: 768px) {
-    margin-top: 2rem;
+    margin: 2rem 0;
   }
   @media (max-width: 550px) {
     width: 350px;
-    margin-top: 1rem;
 
     img {
       width: 100%;

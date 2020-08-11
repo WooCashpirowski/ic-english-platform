@@ -9,7 +9,7 @@ const Card = styled.div`
   border-radius: 10px;
   border: 4px solid #fff;
   position: relative;
-  margin: 1rem 1rem 5rem;
+  margin: 1rem 1rem;
   display: flex;
   flex-direction: column;
   &::after {
@@ -38,7 +38,7 @@ const Card = styled.div`
     width: 250px;
     height: 250px;
     padding: 8px;
-    border-radius: 10px;
+    border-radius: 5px;
     background: linear-gradient(145deg, #344ca9, #2c408e);
     box-shadow: 7px 7px 14px #2a3c86, -7px -7px 14px #3852b6;
     transition: all 0.1s ease;

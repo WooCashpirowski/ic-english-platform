@@ -30,8 +30,8 @@ const Trainer = () => {
           style={{ "--i": 3 }}
           goto="/trainer/learn-more"
         />
-        <Footer />
       </Main>
+      <Footer />
     </>
   );
 };

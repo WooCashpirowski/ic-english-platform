@@ -3,12 +3,9 @@ import styled from "styled-components";
 import erasmusLogo from "../assets/img/erasmus_color.png";
 
 const FooterStyled = styled.footer`
-  padding: 1rem 2rem 0;
+  padding: 1rem 2rem 0.5rem;
   margin: auto;
-  position: absolute;
-  bottom: 0;
   width: 100%;
-
   .footer {
     display: flex;
     justify-content: space-evenly;

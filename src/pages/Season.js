@@ -26,7 +26,6 @@ const Container = styled.section`
       border-radius: 10px;
       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
       margin: 0 auto;
-
       .card-title {
         height: 280px;
         width: 280px;
@@ -36,7 +35,7 @@ const Container = styled.section`
         align-items: center;
         justify-content: flex-start;
         text-align: center;
-        border-radius: 10px;
+        border-radius: 5px;
         box-shadow: 5px -5px 5px #283a80, -5px 5px 5px #3a54bc;
         &:hover {
           background: linear-gradient(135deg, #253575, #344ca9);

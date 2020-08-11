@@ -6,6 +6,7 @@ import BackBtn from "../components/BackBtn";
 import styled from "styled-components";
 import seasonsData from "../seasonsData";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const Card = styled.div`
   min-height: 300px;
@@ -99,6 +100,7 @@ const Seasons = () => {
           </Card>
         ))}
       </Main>
+      <Footer />
     </>
   );
 };

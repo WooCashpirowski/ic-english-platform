@@ -8,6 +8,7 @@ import MediaButtons from "../components/MediaButtons";
 import MediaWrapper from "../components/MediaWrapper";
 import Iframe from "react-iframe";
 import InnerWrapper from "../components/InnerWrapper";
+import Footer from "../components/Footer";
 
 const Container = styled.main`
   display: flex;
@@ -92,6 +93,7 @@ const Multimedia = () => {
           );
         })}
       </Container>
+      <Footer />
     </>
   );
 };

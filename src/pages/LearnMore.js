@@ -4,6 +4,7 @@ import TopBar from "../components/TopBar";
 import BackBtn from "../components/BackBtn";
 import Card from "../components/Card";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const LearnMore = () => {
   return (
@@ -25,6 +26,7 @@ const LearnMore = () => {
           </Link>
         </Card>
       </Main>
+      <Footer />
     </>
   );
 };

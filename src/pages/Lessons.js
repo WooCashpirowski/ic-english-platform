@@ -5,6 +5,7 @@ import BackBtn from "../components/BackBtn";
 import Card from "../components/Card";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const Container = styled.main`
   min-height: calc(100vh - 50px);
@@ -43,6 +44,7 @@ const Lessons = () => {
           </Card>
         ))}
       </Container>
+      <Footer />
     </>
   );
 };

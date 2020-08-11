@@ -1,5 +1,6 @@
 import React from "react";
 import TopBar from "../components/TopBar";
+import Footer from "../components/Footer";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -34,6 +35,7 @@ const Error = () => {
         <h1>The site you're trying to reach doesn't exist.</h1>
         <Link to="/">home page</Link>
       </Wrapper>
+      <Footer />
     </>
   );
 };

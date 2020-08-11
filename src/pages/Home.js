@@ -30,8 +30,8 @@ const Home = () => {
             setTrainer(false);
           }}
         />
-        <Footer />
       </Main>
+      <Footer />
     </>
   );
 };
