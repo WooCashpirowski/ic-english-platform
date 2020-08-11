@@ -90,12 +90,12 @@ const Seasons = () => {
               Go to multimedia
             </Link>
             {isTrainer && (
-              <Link
+              <a
                 className="btn btn-outline-light"
-                to={`http://ic-english.eu/platforma/assets/resources/s0${season.season}.zip`}
+                href={`http://ic-english.eu/platforma/assets/resources/s0${season.season}.zip`}
               >
                 Download Resources
-              </Link>
+              </a>
             )}
           </Card>
         ))}

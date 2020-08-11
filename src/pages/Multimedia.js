@@ -3,24 +3,12 @@ import { useParams } from "react-router-dom";
 import seasonsData from "../seasonsData";
 import BackBtn from "../components/BackBtn";
 import TopBar from "../components/TopBar";
-import styled from "styled-components";
 import MediaButtons from "../components/MediaButtons";
 import MediaWrapper from "../components/MediaWrapper";
+import MediaContainer from "../components/MediaContainer";
 import Iframe from "react-iframe";
 import InnerWrapper from "../components/InnerWrapper";
 import Footer from "../components/Footer";
-
-const Container = styled.main`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  @media (max-width: 1280px) {
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-`;
 
 const Multimedia = () => {
   const { id } = useParams();
@@ -47,7 +35,7 @@ const Multimedia = () => {
     <>
       <TopBar title={title} />
       <BackBtn goto="./" />
-      <Container>
+      <MediaContainer>
         <MediaButtons>
           {media.map((item) => (
             <div
@@ -62,7 +50,7 @@ const Multimedia = () => {
         </MediaButtons>
         {!activeContent && (
           <InnerWrapper>
-            <h1>Use buttons to choose multimedia</h1>
+            <h1>Click buttons to choose multimedia</h1>
           </InnerWrapper>
         )}
         {media.map((item) => {
@@ -92,7 +80,7 @@ const Multimedia = () => {
             </MediaWrapper>
           );
         })}
-      </Container>
+      </MediaContainer>
       <Footer />
     </>
   );

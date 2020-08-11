@@ -3,8 +3,10 @@ import styled from "styled-components";
 
 const Buttons = styled.div`
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin-left: 2rem;
 
   .mm-btn {

@@ -6,26 +6,19 @@ import styled from "styled-components";
 const Button = styled.div`
   position: absolute;
   margin-left: 3.2rem;
-  top: 4.5rem;
+  top: 0.3rem;
   transition: transform 0.2s ease;
-  z-index: 2;
+  z-index: 4;
   svg {
     font-size: 2.5rem;
+    color: #fff;
   }
   &:hover {
     transform: translateX(-4px);
   }
-
   @media (max-width: 651px) {
     margin-left: 1rem;
-    top: 4rem;
   }
-  @media (max-width: 550px) {
-    top: 0.3rem;
-    z-index: 4;
-    svg {
-      color: #fff;
-    }
   }
 `;
 

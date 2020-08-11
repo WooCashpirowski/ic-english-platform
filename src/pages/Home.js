@@ -24,7 +24,7 @@ const Home = () => {
         <SelectionItem
           img={HomeLearner}
           alt="learner"
-          style={{ "--i": -3 }}
+          style={{ "--i": -5 }}
           goto="/seasons"
           state={() => {
             setTrainer(false);

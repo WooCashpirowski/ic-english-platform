@@ -12,7 +12,7 @@ const Container = styled.main`
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  grid-gap: 1.5rem;
+  grid-gap: 3rem;
   align-content: center;
   justify-content: center;
   align-items: center;
@@ -25,14 +25,25 @@ const Container = styled.main`
     background: var(--color-main);
     color: #fff;
     font-size: 1rem;
-    height: 210px;
-    width: 210px;
+    height: 250px;
+    width: 250px;
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     margin: 0 auto;
+    &.big {
+      height: 310px;
+      width: 310px;
+      .card-title {
+        height: 290px;
+        width: 290px;
+        h1 {
+          font-size: 1.6rem;
+        }
+      }
+    }
     .card-title {
-      height: 190px;
-      width: 190px;
+      height: 230px;
+      width: 230px;
       background: linear-gradient(45deg, #2c408e, #344ca9);
       display: flex;
       flex-direction: column;
@@ -41,13 +52,17 @@ const Container = styled.main`
       text-align: center;
       border-radius: 5px;
       box-shadow: 5px -5px 5px #283a80, -5px 5px 5px #3a54bc;
+      padding: 0.5rem;
       &:hover {
         background: linear-gradient(135deg, #253575, #344ca9);
       }
       h1 {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         font-weight: 400;
         font-style: italic;
+        &:nth-child(2) {
+          margin-top: 1rem;
+        }
       }
       p {
         margin-top: 4rem;
@@ -66,16 +81,19 @@ const Lesson = () => {
   return (
     <>
       <TopBar title={title} />
-      <BackBtn goto="./" />
-
+      <BackBtn goto="/trainer/lessons/" />
       <Container>
         {lessons.map((lesson) => (
-          <div key={lesson.id} className="card">
+          <div
+            key={lesson.id}
+            className={title === "ANDRAGOGY" ? "card big" : "card"}
+          >
             <Link
               to={`/trainer/lessons/${slug}/${lesson.id}`}
               className="card-title"
             >
               <h1>{lesson.title}</h1>
+              {lesson.subtitle && <h1>{lesson.subtitle}</h1>}
             </Link>
           </div>
         ))}

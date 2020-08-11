@@ -18,6 +18,7 @@ const Nav = styled.header`
     z-index: 1;
     .logo img {
       position: absolute;
+      right: 1rem;
       max-width: 150px;
       z-index: 1;
     }

@@ -273,6 +273,9 @@ export default [
             id: "201m2",
             location: "https://ic-english.eu/adult-learning-theories/",
             blog: true,
+            subtitle: "Adult Learning Theories",
+            subSubTitle:
+              "Principles of Adult Learning Theory according to Malcolm Knowles",
           },
           {
             id: "201m3",
@@ -315,6 +318,8 @@ export default [
             location:
               "https://ic-english.eu/andragogy-meets-lifelong-learning/",
             blog: true,
+            subtitle: "Andragogy",
+            subSubTitle: "Implications for practice",
           },
           {
             id: "202m5",
@@ -337,6 +342,8 @@ export default [
             location:
               "https://ic-english.eu/knowless-andragogy-principles-and-implications/",
             blog: true,
+            subtitle: "Knowles’s andragogy",
+            subSubTitle: "The Andragogy in Practice Model",
           },
           {
             id: "203m3",
@@ -371,8 +378,8 @@ export default [
             location:
               "https://ic-english.eu/kolbs-experiential-learning-theory/",
             blog: true,
-            subtitle:
-              "<h1>Kolb’s Experiential Learning Theory</h1><h2>The Foundations</h2>",
+            subtitle: "Kolb’s Experiential Learning Theory",
+            subSubTitle: "The Foundations",
           },
           {
             id: "301m2",
@@ -415,8 +422,8 @@ export default [
             location:
               "https://ic-english.eu/learning-styles-from-good-learner-to-effective-learner/",
             blog: true,
-            subtitle:
-              "<h1>Learning Styles</h1><h2>From “good learner” to “effective learner”</h2>",
+            subtitle: "Learning Styles",
+            subSubTitle: "From “good learner” to “effective learner”",
           },
           {
             id: "302m4",
@@ -449,8 +456,8 @@ export default [
             location:
               "https://ic-english.eu/learning-styles-inventory-and-questionnaire/",
             blog: true,
-            subtitle:
-              "<h1>Honey & Mumford</h1><h2>Learning Styles Inventory and Questionnaire</h2>",
+            subtitle: "Honey & Mumford",
+            subSubTitle: "Learning Styles Inventory and Questionnaire",
           },
           {
             id: "303m4",
@@ -477,7 +484,8 @@ export default [
             id: "304m2",
             location: "https://ic-english.eu/learning-styles-empiricist/",
             blog: true,
-            subtitle: "<h1>Empiricists</h1><h2>Stressors and facilitators</h2>",
+            subtitle: "Empiricists",
+            subSubTitle: "Stressors and facilitators",
           },
           {
             id: "304m3",
@@ -509,7 +517,8 @@ export default [
             id: "305m2",
             location: "https://ic-english.eu/learning-styles-analysts/",
             blog: true,
-            subtitle: "<h1>Analysts</h1><h2>Stressors and facilitators</h2>",
+            subtitle: "Analysts",
+            subSubTitle: "Stressors and facilitators",
           },
           {
             id: "305m3",
@@ -541,7 +550,8 @@ export default [
             id: "306m2",
             location: "https://ic-english.eu/learning-styles-pragmatists/",
             blog: true,
-            subtitle: "<h1>Pragmatists</h1><h2>Stressors and facilitators</h2>",
+            subtitle: "Pragmatists",
+            subSubTitle: "Stressors and facilitators",
           },
           {
             id: "306m3",
@@ -573,8 +583,8 @@ export default [
             id: "307m2",
             location: "https://ic-english.eu/learning-styles-pragmatists/",
             blog: true,
-            subtitle:
-              "<h1>Theoreticians</h1><h2>Stressors and facilitators</h2>",
+            subtitle: "Theoreticians",
+            subSubTitle: "Stressors and facilitators",
           },
           {
             id: "307m3",

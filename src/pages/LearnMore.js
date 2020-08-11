@@ -13,12 +13,12 @@ const LearnMore = () => {
       <BackBtn goto="/trainer" />
       <Main>
         <Card>
-          <Link
-            to="http://ic-english.eu/platforma/assets/resources/ebook_full.zip"
+          <a
+            href="http://ic-english.eu/platforma/assets/resources/ebook_full.zip"
             download
           >
             <h2>Teachers Manual</h2>
-          </Link>
+          </a>
         </Card>
         <Card>
           <Link to="/trainer/lessons">

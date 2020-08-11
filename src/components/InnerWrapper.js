@@ -46,6 +46,49 @@ const InnerWrapper = styled.div`
       border-radius: 90px;
       box-shadow: 0px 0px 20px 8px rgba(0, 0, 0, 0.1);
     }
+    .header {
+      text-align: center;
+
+      h1 {
+        font-size: 3rem;
+        font-weight: 500;
+        margin-bottom: 0.9rem;
+        color: inherit;
+      }
+    }
+    .goto-area {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 2rem;
+      width: 90%;
+
+      .goto {
+        color: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        border-radius: 5px;
+        width: 50%;
+        box-shadow: 10px 10px 30px #c9c9c6, -10px -10px 30px #ffffff;
+        transition: all 0.1s ease-in;
+        h2 {
+          font-weight: 500;
+        }
+        svg {
+          font-size: 2.5rem;
+        }
+        &:hover {
+          background: linear-gradient(145deg, #fefef9, #d5d5d2);
+          box-shadow: 10px 10px 30px #c9c9c6, -10px -10px 30px #ffffff;
+        }
+        &:active {
+          box-shadow: inset 10px 10px 30px #c9c9c6,
+            inset -10px -10px 30px #ffffff;
+        }
+      }
+    }
   }
 `;
 

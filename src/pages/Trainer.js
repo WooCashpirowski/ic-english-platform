@@ -18,7 +18,7 @@ const Trainer = () => {
         <SelectionItem
           img={RunLessons}
           alt="run lessons"
-          style={{ "--i": -2 }}
+          style={{ "--i": -7 }}
           goto="/seasons"
           state={() => {
             setTrainer(true);
@@ -27,7 +27,7 @@ const Trainer = () => {
         <SelectionItem
           img={Learn}
           alt="learn more"
-          style={{ "--i": 3 }}
+          style={{ "--i": -13 }}
           goto="/trainer/learn-more"
         />
       </Main>
