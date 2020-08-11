@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Iframe from "react-iframe";
 
 const Wrapper = styled.article`
   position: relative;
@@ -87,15 +86,10 @@ const Wrapper = styled.article`
   }
 `;
 
-const MediaWrapper = ({ location, title, id, styleClass }) => {
+const MediaWrapper = ({ id, styleClass, children }) => {
   return (
     <Wrapper id={id} className={styleClass}>
-      <Iframe
-        url={location}
-        frameBorder="0"
-        title={title}
-        className="i-frame"
-      />
+      {children}
     </Wrapper>
   );
 };

@@ -27,6 +27,7 @@ const Buttons = styled.div`
       background: linear-gradient(145deg, #344ca9, #2c408e);
       font-family: inherit;
       color: #fff;
+      text-transform: uppercase;
       border: none;
       font-size: 18px;
       font-weight: 500;
@@ -43,9 +44,7 @@ const Buttons = styled.div`
         pointer-events: none;
       }
     }
-    &.active {
-      background: #fff;
-    }
+
     &.active button {
       background: linear-gradient(45deg, #d5d2d2, #fef9f9);
       color: var(--color-main);
@@ -55,14 +54,16 @@ const Buttons = styled.div`
       height: 60px;
     }
     @media (max-width: 768px) {
-      width: 120px;
+      max-width: 120px;
       height: 40px;
     }
     @media (max-width: 455px) {
       max-width: 100px;
       max-height: 35px;
-      font-size: 12px;
       margin: 1rem 0.5rem 0;
+      button {
+        font-size: 14px;
+      }
     }
     @media (max-width: 320px) {
       max-width: 80px;

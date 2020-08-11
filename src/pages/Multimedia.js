@@ -6,6 +6,8 @@ import TopBar from "../components/TopBar";
 import styled from "styled-components";
 import MediaButtons from "../components/MediaButtons";
 import MediaWrapper from "../components/MediaWrapper";
+import Iframe from "react-iframe";
+import InnerWrapper from "../components/InnerWrapper";
 
 const Container = styled.main`
   display: flex;
@@ -57,14 +59,36 @@ const Multimedia = () => {
             </div>
           ))}
         </MediaButtons>
+        {!activeContent && (
+          <InnerWrapper>
+            <h1>Use buttons to choose multimedia</h1>
+          </InnerWrapper>
+        )}
         {media.map((item) => {
           return (
             <MediaWrapper
               styleClass={activeContent === item.id && "active"}
               key={item.id}
               id={item.id}
-              location={`${url}${item.location}`}
-            />
+            >
+              {item.audio ? (
+                <InnerWrapper>
+                  <div className="inner-area">
+                    <audio controls src={`${url}${item.location}`}>
+                      Your browser does not support the
+                      <code>audio</code> element.
+                    </audio>
+                  </div>
+                </InnerWrapper>
+              ) : (
+                <Iframe
+                  url={`${url}${item.location}`}
+                  frameBorder="0"
+                  title={item.title}
+                  className="i-frame"
+                />
+              )}
+            </MediaWrapper>
           );
         })}
       </Container>

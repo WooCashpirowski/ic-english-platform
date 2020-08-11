@@ -1,4 +1,4 @@
-const seasonsData = [
+export default [
   {
     season: "1",
     level: "A1",
@@ -1122,7 +1122,8 @@ const seasonsData = [
           },
           {
             id: "s03e01m1",
-            location: "/multimedia/s03/s03e01m01/index.html",
+            location: "/multimedia/audio/S03E01M1.mp3",
+            audio: true,
           },
         ],
       },
@@ -1164,7 +1165,8 @@ const seasonsData = [
           },
           {
             id: "s03e03m1",
-            location: "/multimedia/s03/s03e03m01/index.html",
+            location: "/multimedia/audio/S03E03M1.mp3",
+            audio: true,
           },
         ],
       },
@@ -1187,7 +1189,8 @@ const seasonsData = [
           },
           {
             id: "s03e04m1",
-            location: "/multimedia/s03/s03e04m01/index.html",
+            location: "/multimedia/audio/S03E04M1.mp3",
+            audio: true,
           },
         ],
       },
@@ -1210,7 +1213,8 @@ const seasonsData = [
           },
           {
             id: "s03e05m1",
-            location: "/multimedia/s03/s03e05m01/index.html",
+            location: "/multimedia/audio/S03E05M1.mp3",
+            audio: true,
           },
         ],
       },
@@ -1343,7 +1347,8 @@ const seasonsData = [
           },
           {
             id: "s03e12m1",
-            location: `/multimedia/s03/s03e12m01/index.html`,
+            location: `/multimedia/audio/S03E12M1.mp3`,
+            audio: true,
           },
         ],
       },
@@ -1377,7 +1382,8 @@ const seasonsData = [
           },
           {
             id: "s03e14m1",
-            location: "/multimedia/s03/s03e14m01/index.html",
+            location: "/multimedia/audio/S03E14M1.mp3",
+            audio: true,
           },
         ],
       },
@@ -1434,7 +1440,8 @@ const seasonsData = [
           },
           {
             id: "s03e17m1",
-            location: "/multimedia/s03/s03e17m01/index.html",
+            location: "/multimedia/audio/S03E17M1.mp3",
+            audio: true,
           },
         ],
       },
@@ -1491,7 +1498,8 @@ const seasonsData = [
           },
           {
             id: "s03e20m1",
-            location: "/multimedia/s03/s03e20m01/index.html",
+            location: "/multimedia/audio/S03E20M1.mp3",
+            audio: true,
           },
         ],
       },
@@ -1506,11 +1514,11 @@ const seasonsData = [
           },
           {
             id: "s03e21q2",
-            location: "/multimedia/s03/s03e21q2/index.html",
+            location: "/multimedia/s03/s03e21q02/index.html",
           },
           {
             id: "s03e21q3",
-            location: "/multimedia/s03/s03e21q3/index.html",
+            location: "/multimedia/s03/s03e21q03/index.html",
           },
         ],
       },
@@ -1521,15 +1529,15 @@ const seasonsData = [
         media: [
           {
             id: "s03e22q1",
-            location: "/multimedia/s03/s03e22q1/index.html",
+            location: "/multimedia/s03/s03e22q01/index.html",
           },
           {
             id: "s03e22q2",
-            location: "/multimedia/s03/s03e22q2/index.html",
+            location: "/multimedia/s03/s03e22q02/index.html",
           },
           {
             id: "s03e22q3",
-            location: "/multimedia/s03/s03e22q3/index.html",
+            location: "/multimedia/s03/s03e22q03/index.html",
           },
         ],
       },
@@ -1540,15 +1548,15 @@ const seasonsData = [
         media: [
           {
             id: "s03e23q1",
-            location: "/multimedia/s03/s03e23q1/index.html",
+            location: "/multimedia/s03/s03e23q01/index.html",
           },
           {
             id: "s03e23q2",
-            location: "/multimedia/s03/s03e23q2/index.html",
+            location: "/multimedia/s03/s03e23q02/index.html",
           },
           {
             id: "s03e23q3",
-            location: "/multimedia/s03/s03e23q3/index.html",
+            location: "/multimedia/s03/s03e23q03/index.html",
           },
         ],
       },
@@ -1559,15 +1567,15 @@ const seasonsData = [
         media: [
           {
             id: "s03e24q1",
-            location: `/multimedia/s03/s03e24q1/index.html`,
+            location: `/multimedia/s03/s03e24q01/index.html`,
           },
           {
             id: "s03e24q2",
-            location: "/multimedia/s03/s03e24q2/index.html",
+            location: "/multimedia/s03/s03e24q02/index.html",
           },
           {
             id: "s03e24q3",
-            location: "/multimedia/s03/s03e24q3/index.html",
+            location: "/multimedia/s03/s03e24q03/index.html",
           },
         ],
       },
@@ -1578,15 +1586,15 @@ const seasonsData = [
         media: [
           {
             id: "s03e25q1",
-            location: `/multimedia/s03/s03e25q1/index.html`,
+            location: `/multimedia/s03/s03e25q01/index.html`,
           },
           {
             id: "s03e25q2",
-            location: "/multimedia/s03/s03e25q2/index.html",
+            location: "/multimedia/s03/s03e25q02/index.html",
           },
           {
             id: "s03e25q3",
-            location: "/multimedia/s03/s03e25q3/index.html",
+            location: "/multimedia/s03/s03e25q03/index.html",
           },
         ],
       },
@@ -1597,15 +1605,16 @@ const seasonsData = [
         media: [
           {
             id: "s03e26q1",
-            location: "/multimedia/s03/s03e26q1/index.html",
+            location: "/multimedia/s03/s03e26q01/index.html",
           },
           {
             id: "s03e26q2",
-            location: "/multimedia/s03/s03e26q2/index.html",
+            location: "/multimedia/s03/s03e26q02/index.html",
           },
           {
             id: "s03e26m1",
-            location: "/multimedia/s03/s03e26m1/index.html",
+            location: "/multimedia/audio/S03E26M1.mp3",
+            audio: true,
           },
         ],
       },
@@ -1616,15 +1625,16 @@ const seasonsData = [
         media: [
           {
             id: "s03e27q1",
-            location: "/multimedia/s03/s03e27q1/index.html",
+            location: "/multimedia/s03/s03e27q01/index.html",
           },
           {
             id: "s03e27q2",
-            location: "/multimedia/s03/s03e27q2/index.html",
+            location: "/multimedia/s03/s03e27q02/index.html",
           },
           {
             id: "s03e27m1",
-            location: "/multimedia/s03/s03e27m1/index.html",
+            location: "/multimedia/audio/S03E27M1.mp3",
+            audio: true,
           },
         ],
       },
@@ -1635,15 +1645,16 @@ const seasonsData = [
         media: [
           {
             id: "s03e28q1",
-            location: "/multimedia/s03/s03e28q1/index.html",
+            location: "/multimedia/s03/s03e28q01/index.html",
           },
           {
             id: "s03e28q2",
-            location: "/multimedia/s03/s03e28q2/index.html",
+            location: "/multimedia/s03/s03e28q02/index.html",
           },
           {
             id: "s03e28m1",
-            location: "/multimedia/s03/s03e28m1/index.html",
+            location: "/multimedia/audio/S03E28M1.mp3",
+            audio: true,
           },
         ],
       },
@@ -1654,11 +1665,11 @@ const seasonsData = [
         media: [
           {
             id: "s03e29q1",
-            location: "/multimedia/s03/s03e29q1/index.html",
+            location: "/multimedia/s03/s03e29q01/index.html",
           },
           {
             id: "s03e29q2",
-            location: "/multimedia/s03/s03e29q2/index.html",
+            location: "/multimedia/s03/s03e29q02/index.html",
           },
         ],
       },
@@ -1669,20 +1680,18 @@ const seasonsData = [
         media: [
           {
             id: "s03e30q1",
-            location: "/multimedia/s03/s03e30q1/index.html",
+            location: "/multimedia/s03/s03e30q01/index.html",
           },
           {
             id: "s03e30q2",
-            location: "/multimedia/s03/s03e30q2/index.html",
+            location: "/multimedia/s03/s03e30q02/index.html",
           },
           {
             id: "s03e30q3",
-            location: "/multimedia/s03/s03e30q3/index.html",
+            location: "/multimedia/s03/s03e30q03/index.html",
           },
         ],
       },
     ],
   },
 ];
-
-export default seasonsData;
