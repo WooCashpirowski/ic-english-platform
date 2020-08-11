@@ -1,6 +1,7 @@
 export default [
   {
     module: 1,
+    slug: "why-ic-english",
     title: "WHY IC-ENGLISH?",
     lessons: [
       {
@@ -256,6 +257,7 @@ export default [
   },
   {
     module: 2,
+    slug: "andragogy",
     title: "ANDRAGOGY",
     lessons: [
       {
@@ -357,6 +359,7 @@ export default [
   },
   {
     module: 3,
+    slug: "learning-styles",
     title: "LEARNING STYLES",
     lessons: [
       {
@@ -594,6 +597,7 @@ export default [
   },
   {
     module: 4,
+    slug: "our-method",
     title: "OUR METHOD",
     lessons: [
       {

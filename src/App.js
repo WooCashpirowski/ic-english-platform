@@ -5,6 +5,8 @@ import Trainer from "./pages/Trainer";
 import LearnMore from "./pages/LearnMore";
 import Season from "./pages/Season";
 import Lessons from "./pages/Lessons";
+import Lesson from "./pages/Lesson";
+import Media from "./pages/Media";
 import Seasons from "./pages/Seasons";
 import Error from "./pages/Error";
 import Multimedia from "./pages/Multimedia";
@@ -22,8 +24,14 @@ function App() {
         <Route path="/trainer/learn-more">
           <LearnMore />
         </Route>
-        <Route path="/trainer/lessons">
+        <Route exact path="/trainer/lessons">
           <Lessons />
+        </Route>
+        <Route exact path="/trainer/lessons/:slug">
+          <Lesson />
+        </Route>
+        <Route path="/trainer/lessons/:slug/:id">
+          <Media />
         </Route>
         <Route exact path="/seasons">
           <Seasons />
