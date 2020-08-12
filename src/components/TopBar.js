@@ -56,9 +56,9 @@ const TopBar = ({ title }) => {
     <Nav>
       <nav>
         <div className="logo">
-          <Link to="/">
+          <a href="https://ic-english.eu/pl/homepage-pl/">
             <img src={logo} alt="ic-english" />
-          </Link>
+          </a>
         </div>
         <motion.div
           animate={{ opacity: 1, scale: 1 }}

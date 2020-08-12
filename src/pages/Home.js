@@ -14,7 +14,6 @@ const Home = () => {
   return (
     <>
       <TopBar title="Welcome to IC-English Platform" />
-      <BackBtn goto="https://ic-english.eu/" />
       <Main>
         <motion.div
           animate={{ x: 0 }}
