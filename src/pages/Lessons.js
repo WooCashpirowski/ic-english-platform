@@ -6,6 +6,7 @@ import Card from "../components/Card";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
+import { motion } from "framer-motion";
 
 const Container = styled.main`
   min-height: calc(100vh - 50px);
@@ -36,13 +37,34 @@ const Lessons = () => {
       <TopBar title="Dive into IC-English" />
       <BackBtn goto="/trainer/learn-more" />
       <Container>
-        {lessonsData.map((lesson) => (
-          <Card key={lesson.module} className="card">
-            <Link to={`/trainer/lessons/${lesson.slug}`} className="card-title">
-              <h1>{lesson.title}</h1>
-            </Link>
-          </Card>
-        ))}
+        {lessonsData.map((lesson) => {
+          const moduleInt = parseInt(lesson.module);
+          return (
+            <motion.div
+              key={lesson.module}
+              initial={{
+                x: moduleInt === 1 || moduleInt === 3 ? -500 : 500,
+                y: moduleInt === 1 || moduleInt === 2 ? -500 : 500,
+              }}
+              transition={{
+                delay: 0.4,
+                type: "spring",
+                stiffness: 50,
+                duration: 0.6,
+              }}
+              animate={{ x: 0, y: 0 }}
+            >
+              <Card className="card">
+                <Link
+                  to={`/trainer/lessons/${lesson.slug}`}
+                  className="card-title"
+                >
+                  <h1>{lesson.title}</h1>
+                </Link>
+              </Card>
+            </motion.div>
+          );
+        })}
       </Container>
       <Footer />
     </>

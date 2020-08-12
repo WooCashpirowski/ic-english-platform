@@ -9,6 +9,7 @@ import MediaContainer from "../components/MediaContainer";
 import Iframe from "react-iframe";
 import InnerWrapper from "../components/InnerWrapper";
 import Footer from "../components/Footer";
+import { motion } from "framer-motion";
 
 const Multimedia = () => {
   const { id } = useParams();
@@ -49,9 +50,15 @@ const Multimedia = () => {
           ))}
         </MediaButtons>
         {!activeContent && (
-          <InnerWrapper>
-            <h1>Click buttons to choose multimedia</h1>
-          </InnerWrapper>
+          <motion.div
+            initial={{ y: 600, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.7 }}
+          >
+            <InnerWrapper>
+              <h1>Click buttons to choose multimedia</h1>
+            </InnerWrapper>
+          </motion.div>
         )}
         {media.map((item) => {
           return (

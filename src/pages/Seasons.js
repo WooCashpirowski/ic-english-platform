@@ -7,6 +7,7 @@ import styled from "styled-components";
 import seasonsData from "../seasonsData";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
+import { motion } from "framer-motion";
 
 const Card = styled.div`
   min-height: 300px;
@@ -82,23 +83,42 @@ const Seasons = () => {
       <TopBar title="Choose your level" />
       <BackBtn goto={isTrainer ? "/trainer" : "/"} />
       <Main>
-        {seasonsData.map((season) => (
-          <Card key={season.season}>
-            <h2>Season {season.season}</h2>
-            <h1>{season.level}</h1>
-            <Link to={`/seasons/${season.season}`} className="btn btn-light">
-              Go to multimedia
-            </Link>
-            {isTrainer && (
-              <a
-                className="btn btn-outline-light"
-                href={`http://ic-english.eu/platforma/assets/resources/s0${season.season}.zip`}
-              >
-                Download Resources
-              </a>
-            )}
-          </Card>
-        ))}
+        {seasonsData.map((season) => {
+          const intSeason = parseInt(season.season);
+          return (
+            <motion.div
+              key={season.season}
+              animate={{
+                opacity: 1,
+                scale: 1,
+                rotate: intSeason === 2 ? 720 : -720,
+              }}
+              initial={{ opacity: 0, scale: 0 }}
+              transition={{
+                duration: intSeason === 1 ? 0.5 : intSeason === 2 ? 1 : 1.5,
+              }}
+            >
+              <Card>
+                <h2>Season {season.season}</h2>
+                <h1>{season.level}</h1>
+                <Link
+                  to={`/seasons/${season.season}`}
+                  className="btn btn-light"
+                >
+                  Go to multimedia
+                </Link>
+                {isTrainer && (
+                  <a
+                    className="btn btn-outline-light"
+                    href={`http://ic-english.eu/platforma/assets/resources/s0${season.season}.zip`}
+                  >
+                    Download Resources
+                  </a>
+                )}
+              </Card>
+            </motion.div>
+          );
+        })}
       </Main>
       <Footer />
     </>

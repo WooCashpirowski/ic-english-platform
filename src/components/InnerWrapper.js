@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import React from "react";
+import { motion } from "framer-motion";
 
-const InnerWrapper = styled.div`
+const Wrapper = styled.div`
   overflow: hidden;
-  width: 100%;
   height: 580px;
   background: var(--color-main);
   margin: 0 1rem;
@@ -12,6 +13,14 @@ const InnerWrapper = styled.div`
   align-items: center;
   h1 {
     color: #fff;
+    text-align: center;
+    margin: 0 12rem;
+    @media (max-width: 768px) {
+      font-size: 1.3rem;
+    }
+    @media (max-width: 420px) {
+      margin: 0 5rem;
+    }
   }
   .inner-area {
     width: 80%;
@@ -91,5 +100,15 @@ const InnerWrapper = styled.div`
     }
   }
 `;
+
+const InnerWrapper = ({ children }) => (
+  <motion.div
+    initial={{ y: -600, opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    transition={{ delay: 0.7 }}
+  >
+    <Wrapper>{children}</Wrapper>
+  </motion.div>
+);
 
 export default InnerWrapper;

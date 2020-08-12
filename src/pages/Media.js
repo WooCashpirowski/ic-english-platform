@@ -64,7 +64,7 @@ const Media = () => {
               {item.blog ? (
                 <InnerWrapper>
                   <div className="inner-area">
-                    <div class="header">
+                    <div className="header">
                       <h1>{item.subtitle}</h1>
                       <h2>{item.subSubTitle}</h2>
                     </div>

@@ -7,6 +7,7 @@ import seasonsData from "../seasonsData";
 import styled from "styled-components";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { motion } from "framer-motion";
 
 const Container = styled.section`
   height: calc(100vh - 50px);
@@ -110,12 +111,18 @@ const Season = () => {
           focusOnSelect={true}
         >
           {episodes.map((episode) => (
-            <div className="card" key={episode.id}>
+            <motion.div
+              className="card"
+              key={episode.id}
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.6 }}
+            >
               <Link to={`/seasons/${id}/${episode.id}`} className="card-title">
                 <h1>{episode.epNo}</h1>
                 <p>{episode.title}</p>
               </Link>
-            </div>
+            </motion.div>
           ))}
         </Carousel>
       </Container>

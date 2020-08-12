@@ -4,10 +4,10 @@ import styled from "styled-components";
 
 const Container = styled.main`
   width: 100%;
-  min-height: calc(100vh - 167px);
+  min-height: calc(100vh - 50px);
   height: 100%;
   .select {
-    min-height: calc(100vh - 167px);
+    min-height: calc(100vh - 50px);
     display: flex;
     justify-content: space-around;
     align-items: center;

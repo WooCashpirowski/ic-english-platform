@@ -35,6 +35,7 @@ body {
   font-family: "Montserrat", sans-serif;
   color: var(--color-main);
   background: var(--color-light);
+  overflow-x: hidden;
 }
 
 h1 {

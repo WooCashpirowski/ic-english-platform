@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import logo from "../assets/img/logo.png";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Nav = styled.header`
   top: 0;
@@ -25,7 +26,10 @@ const Nav = styled.header`
     h1 {
       color: rgb(237, 233, 233);
       text-align: center;
-      margin-top: 0.5rem;
+      top: 0.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
     }
     @media (max-width: 768px) {
       .logo img {
@@ -56,7 +60,12 @@ const TopBar = ({ title }) => {
             <img src={logo} alt="ic-english" />
           </Link>
         </div>
-        <h1>{title}</h1>
+        <motion.div
+          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0 }}
+        >
+          <h1>{title}</h1>
+        </motion.div>
       </nav>
     </Nav>
   );

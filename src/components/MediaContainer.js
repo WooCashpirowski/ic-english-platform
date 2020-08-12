@@ -7,6 +7,7 @@ export default styled.main`
   position: relative;
   width: 100%;
   margin-top: 3rem;
+  min-height: calc(100vh - 220px);
   @media (max-width: 1280px) {
     flex-direction: column;
     justify-content: flex-start;
