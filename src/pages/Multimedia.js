@@ -23,7 +23,7 @@ const Multimedia = () => {
   const episode = episodes.filter((ep) => ep.id === id);
   const { title, media } = episode[0];
 
-  const url = "http://ic-english.eu/platforma/assets";
+  const url = "https://ic-english.eu/platforma/assets";
 
   const [activeContent, setActiveContent] = useState("");
 

@@ -23,7 +23,7 @@ const Media = () => {
   const lesson = lessons.filter((item) => item.id === parseInt(id));
   const { media, title } = lesson[0];
 
-  const url = "http://ic-english.eu/platforma/assets";
+  const url = "https://ic-english.eu/platforma/assets";
 
   const [activeContent, setActiveContent] = useState("");
 
