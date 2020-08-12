@@ -3,7 +3,6 @@ import { AppContext } from "../context/context";
 import Footer from "../components/Footer";
 import Main from "../components/Main";
 import TopBar from "../components/TopBar";
-import BackBtn from "../components/BackBtn";
 import HomeTrainer from "../assets/img/home-teacher.png";
 import HomeLearner from "../assets/img/home-student.png";
 import SelectionItem from "../components/SelectionItem";

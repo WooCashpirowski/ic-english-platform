@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../assets/img/logo.png";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Nav = styled.header`
