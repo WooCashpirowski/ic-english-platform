@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const Wrapper = styled.article`
   position: relative;
@@ -9,10 +10,7 @@ const Wrapper = styled.article`
   background: var(--color-main);
   margin: 0 1rem;
   transform: scale(0.95);
-  display: none;
-  &.active {
-    display: block;
-  }
+
   .i-frame {
     position: absolute;
     top: 0;
@@ -88,9 +86,15 @@ const Wrapper = styled.article`
 
 const MediaWrapper = ({ id, styleClass, children }) => {
   return (
-    <Wrapper id={id} className={styleClass}>
-      {children}
-    </Wrapper>
+    <motion.div
+      initial={{ opacity: 0, x: 1000 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ type: "spring", stiffness: 50, duration: 1 }}
+    >
+      <Wrapper id={id} className={styleClass}>
+        {children}
+      </Wrapper>
+    </motion.div>
   );
 };
 

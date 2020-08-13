@@ -19,7 +19,7 @@ const Trainer = () => {
         <motion.div
           animate={{ x: 0 }}
           initial={{ x: -1000 }}
-          transition={{ duration: 0.5 }}
+          transition={{ type: "spring", stiffness: 100, duration: 0.5 }}
         >
           <SelectionItem
             img={RunLessons}
@@ -34,7 +34,7 @@ const Trainer = () => {
         <motion.div
           animate={{ y: 0 }}
           initial={{ y: 1000 }}
-          transition={{ duration: 0.7 }}
+          transition={{ type: "spring", stiffness: 50, duration: 0.7 }}
         >
           <SelectionItem
             img={Learn}

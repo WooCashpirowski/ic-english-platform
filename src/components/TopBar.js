@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import logo from "../assets/img/logo.png";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Nav = styled.header`
   top: 0;
@@ -55,9 +56,9 @@ const TopBar = ({ title }) => {
     <Nav>
       <nav>
         <div className="logo">
-          <a href="https://ic-english.eu/pl/homepage-pl/">
+          <Link to="/">
             <img src={logo} alt="ic-english" />
-          </a>
+          </Link>
         </div>
         <motion.div
           animate={{ opacity: 1, scale: 1 }}

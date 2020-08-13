@@ -8,6 +8,7 @@ const Container = styled.main`
   height: 100%;
   .select {
     min-height: calc(100vh - 50px);
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;

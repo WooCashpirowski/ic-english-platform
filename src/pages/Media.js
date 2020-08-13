@@ -56,41 +56,39 @@ const Media = () => {
         )}
         {media.map((item) => {
           return (
-            <MediaWrapper
-              styleClass={activeContent === item.id && "active"}
-              key={item.id}
-              id={item.id}
-            >
-              {item.blog ? (
-                <InnerWrapper>
-                  <div className="inner-area">
-                    <div className="header">
-                      <h1>{item.subtitle}</h1>
-                      <h2>{item.subSubTitle}</h2>
+            activeContent === item.id && (
+              <MediaWrapper key={item.id} id={item.id}>
+                {item.blog ? (
+                  <InnerWrapper>
+                    <div className="inner-area">
+                      <div className="header">
+                        <h1>{item.subtitle}</h1>
+                        <h2>{item.subSubTitle}</h2>
+                      </div>
+                      <div className="goto-area">
+                        <div></div>
+                        <a
+                          className="goto"
+                          href={item.location}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <h2>Go to our blog</h2>
+                          <MdArrowForward />
+                        </a>
+                      </div>
                     </div>
-                    <div className="goto-area">
-                      <div></div>
-                      <a
-                        className="goto"
-                        href={item.location}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <h2>Go to our blog</h2>
-                        <MdArrowForward />
-                      </a>
-                    </div>
-                  </div>
-                </InnerWrapper>
-              ) : (
-                <Iframe
-                  url={`${url}${item.location}`}
-                  frameBorder="0"
-                  title={item.title}
-                  className="i-frame"
-                />
-              )}
-            </MediaWrapper>
+                  </InnerWrapper>
+                ) : (
+                  <Iframe
+                    url={`${url}${item.location}`}
+                    frameBorder="0"
+                    title={item.title}
+                    className="i-frame"
+                  />
+                )}
+              </MediaWrapper>
+            )
           );
         })}
       </MediaContainer>

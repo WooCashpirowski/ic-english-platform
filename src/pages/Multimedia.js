@@ -62,29 +62,27 @@ const Multimedia = () => {
         )}
         {media.map((item) => {
           return (
-            <MediaWrapper
-              styleClass={activeContent === item.id && "active"}
-              key={item.id}
-              id={item.id}
-            >
-              {item.audio ? (
-                <InnerWrapper>
-                  <div className="inner-area">
-                    <audio controls src={`${url}${item.location}`}>
-                      Your browser does not support the
-                      <code>audio</code> element.
-                    </audio>
-                  </div>
-                </InnerWrapper>
-              ) : (
-                <Iframe
-                  url={`${url}${item.location}`}
-                  frameBorder="0"
-                  title={item.title}
-                  className="i-frame"
-                />
-              )}
-            </MediaWrapper>
+            activeContent === item.id && (
+              <MediaWrapper key={item.id} id={item.id}>
+                {item.audio ? (
+                  <InnerWrapper>
+                    <div className="inner-area">
+                      <audio controls src={`${url}${item.location}`}>
+                        Your browser does not support the
+                        <code>audio</code> element.
+                      </audio>
+                    </div>
+                  </InnerWrapper>
+                ) : (
+                  <Iframe
+                    url={`${url}${item.location}`}
+                    frameBorder="0"
+                    title={item.title}
+                    className="i-frame"
+                  />
+                )}
+              </MediaWrapper>
+            )
           );
         })}
       </MediaContainer>

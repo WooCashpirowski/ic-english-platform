@@ -76,6 +76,22 @@ const Card = styled.div`
   }
 `;
 
+const container = {
+  hidden: { opacity: 1, scale: 1 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, scale: 0 },
+  show: { opacity: 1, scale: 1 },
+};
+
 const Seasons = () => {
   const { isTrainer } = useContext(AppContext);
   return (
@@ -83,42 +99,41 @@ const Seasons = () => {
       <TopBar title="Choose your level" />
       <BackBtn goto={isTrainer ? "/trainer" : "/"} />
       <Main>
-        {seasonsData.map((season) => {
-          const intSeason = parseInt(season.season);
-          return (
-            <motion.div
-              key={season.season}
-              animate={{
-                opacity: 1,
-                scale: 1,
-                rotate: intSeason === 2 ? 720 : -720,
-              }}
-              initial={{ opacity: 0, scale: 0 }}
-              transition={{
-                duration: intSeason === 1 ? 0.5 : intSeason === 2 ? 1 : 1.5,
-              }}
-            >
-              <Card>
-                <h2>Season {season.season}</h2>
-                <h1>{season.level}</h1>
-                <Link
-                  to={`/seasons/${season.season}`}
-                  className="btn btn-light"
-                >
-                  Go to multimedia
-                </Link>
-                {isTrainer && (
-                  <a
-                    className="btn btn-outline-light"
-                    href={`http://ic-english.eu/platforma/assets/resources/s0${season.season}.zip`}
+        <motion.div
+          className="select"
+          variants={container}
+          initial="hidden"
+          animate="show"
+        >
+          {seasonsData.map((season) => {
+            return (
+              <motion.div
+                key={season.season}
+                variants={item}
+                transition={{ type: "spring", stiffness: 200 }}
+              >
+                <Card>
+                  <h2>Season {season.season}</h2>
+                  <h1>{season.level}</h1>
+                  <Link
+                    to={`/seasons/${season.season}`}
+                    className="btn btn-light"
                   >
-                    Download Resources
-                  </a>
-                )}
-              </Card>
-            </motion.div>
-          );
-        })}
+                    Go to multimedia
+                  </Link>
+                  {isTrainer && (
+                    <a
+                      className="btn btn-outline-light"
+                      href={`http://ic-english.eu/platforma/assets/resources/s0${season.season}.zip`}
+                    >
+                      Download Resources
+                    </a>
+                  )}
+                </Card>
+              </motion.div>
+            );
+          })}
+        </motion.div>
       </Main>
       <Footer />
     </>
