@@ -27,13 +27,16 @@ const Nav = styled.header`
       color: rgb(237, 233, 233);
       text-align: center;
       top: 0.5rem;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 0;
+      width: 100%;
       position: absolute;
     }
     @media (max-width: 768px) {
       .logo img {
         width: 100px;
+      }
+      h1 {
+        font-size: 1.1rem;
       }
     }
     @media (max-width: 550px) {
@@ -45,7 +48,8 @@ const Nav = styled.header`
         margin-top: 1rem;
       }
       h1 {
-        display: none;
+        color: var(--color-main);
+        top: 4rem;
       }
     }
   }

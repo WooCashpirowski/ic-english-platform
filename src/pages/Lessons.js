@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 
 const Container = styled.main`
-  min-height: calc(100vh - 50px);
+  min-height: calc(100vh - 150px);
   max-width: 80%;
   margin: 0 auto;
   display: grid;
@@ -17,7 +17,7 @@ const Container = styled.main`
   justify-content: center;
   align-items: center;
   grid-template-columns: 320px 320px;
-  column-gap: 3rem;
+  column-gap: 2rem;
   @media (max-width: 704px) {
     grid-template-columns: 320px;
   }

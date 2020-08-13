@@ -14,9 +14,10 @@ const Wrapper = styled.div`
   h1 {
     color: #fff;
     text-align: center;
-    margin: 0 12rem;
+    margin: 0 14rem;
     @media (max-width: 768px) {
       font-size: 1.3rem;
+      margin: 0 10rem;
     }
     @media (max-width: 420px) {
       margin: 0 5rem;

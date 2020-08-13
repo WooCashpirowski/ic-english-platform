@@ -114,8 +114,8 @@ const Season = () => {
             <motion.div
               className="card"
               key={episode.id}
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
+              initial={{ opacity: 0, x: -1000 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.6 }}
             >
               <Link to={`/seasons/${id}/${episode.id}`} className="card-title">
