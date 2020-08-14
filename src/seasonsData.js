@@ -288,7 +288,7 @@ export default [
       },
       {
         id: "s01e18",
-        epNo: "Episode 14",
+        epNo: "Episode 18",
         title: "Visiting the museum",
         media: [
           {
@@ -351,10 +351,6 @@ export default [
           {
             id: "s01e21q2",
             location: "/multimedia/s01/s01e21q2/index.html",
-          },
-          {
-            id: "s01e21q3",
-            location: "/multimedia/s01/s01e21q3/index.html",
           },
         ],
       },
@@ -436,12 +432,12 @@ export default [
             location: "/multimedia/s01/s01e26q1/index.html",
           },
           {
-            id: "s01e26q2",
-            location: "/multimedia/s01/s01e26q2/index.html",
+            id: "s01e26m1",
+            location: "/multimedia/s01/s01e26m1/index.html",
           },
           {
-            id: "s01e26q3",
-            location: "/multimedia/s01/s01e26q3/index.html",
+            id: "s01e26m2",
+            location: "/multimedia/s01/s01e26m2/index.html",
           },
         ],
       },
@@ -459,8 +455,8 @@ export default [
             location: "/multimedia/s01/s01e27q2/index.html",
           },
           {
-            id: "s01e27q3",
-            location: "/multimedia/s01/s01e27q3/index.html",
+            id: "s01e27m1",
+            location: "/multimedia/s01/s01e27m1/index.html",
           },
         ],
       },
@@ -659,8 +655,8 @@ export default [
             location: `/multimedia/s02/s02e07q1/index.html`,
           },
           {
-            id: "s02e07q2",
-            location: "/multimedia/s02/s02e07q2/index.html",
+            id: "s02e07m1",
+            location: "/multimedia/s02/s02e07m1/index.html",
           },
         ],
       },
@@ -860,7 +856,7 @@ export default [
       },
       {
         id: "s02e18",
-        epNo: "Episode 14",
+        epNo: "Episode 18",
         title: "Lunchtime at the office",
         media: [
           {
@@ -1447,7 +1443,7 @@ export default [
       },
       {
         id: "s03e18",
-        epNo: "Episode 14",
+        epNo: "Episode 18",
         title: "Media and TV",
         media: [
           {
