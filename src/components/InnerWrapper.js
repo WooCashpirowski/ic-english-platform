@@ -14,13 +14,19 @@ const Wrapper = styled.div`
   h1 {
     color: #fff;
     text-align: center;
-    margin: 0 14rem;
-    @media (max-width: 768px) {
-      font-size: 1.3rem;
-      margin: 0 10rem;
+    margin: 0 22rem;
+    border: 1px solid #fff;
+    padding: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    &:hover {
+      transform: scale(1.1);
     }
-    @media (max-width: 420px) {
-      margin: 0 5rem;
+    @media (max-width: 1064px) {
+      margin: 0 18rem;
+    }
+    @media (max-width: 870px) {
+      font-size: 1.5rem;
     }
   }
   .inner-area {
@@ -59,7 +65,7 @@ const Wrapper = styled.div`
     .header {
       text-align: center;
 
-      h1 {
+      h2 {
         font-size: 3rem;
         font-weight: 500;
         margin-bottom: 0.9rem;
@@ -83,7 +89,7 @@ const Wrapper = styled.div`
         width: 50%;
         box-shadow: 10px 10px 30px #c9c9c6, -10px -10px 30px #ffffff;
         transition: all 0.1s ease-in;
-        h2 {
+        h3 {
           font-weight: 500;
         }
         svg {
@@ -98,6 +104,16 @@ const Wrapper = styled.div`
             inset -10px -10px 30px #ffffff;
         }
       }
+    }
+  }
+  @media (max-width: 768px), (max-width: 960px) and (orientation: landscape) {
+    background: none;
+    align-items: flex-start;
+    h1 {
+      font-size: 1.2rem;
+      margin: 4rem 1rem;
+      color: var(--color-main);
+      border: 1px solid var(--color-main);
     }
   }
 `;

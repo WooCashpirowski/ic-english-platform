@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
 
 const Wrapper = styled.article`
   position: relative;
@@ -86,15 +85,9 @@ const Wrapper = styled.article`
 
 const MediaWrapper = ({ id, styleClass, children }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 1000 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ type: "spring", stiffness: 50, duration: 1 }}
-    >
-      <Wrapper id={id} className={styleClass}>
-        {children}
-      </Wrapper>
-    </motion.div>
+    <Wrapper id={id} className={styleClass}>
+      {children}
+    </Wrapper>
   );
 };
 

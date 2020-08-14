@@ -15,7 +15,7 @@ const Container = styled.main`
     opacity: 1;
     transition: all 0.5s ease-out;
     @media (max-width: 768px) {
-      padding-top: 4rem;
+      padding-top: 2rem;
       flex-direction: column;
       justify-content: flex-start;
       height: 100%;
@@ -23,7 +23,7 @@ const Container = styled.main`
     @media (max-width: 960px) and (orientation: landscape) {
       flex-direction: row;
       justify-content: space-around;
-      padding-top: 3rem;
+      padding-top: 1.5rem;
     }
   }
 `;

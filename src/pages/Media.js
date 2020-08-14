@@ -10,6 +10,7 @@ import Iframe from "react-iframe";
 import InnerWrapper from "../components/InnerWrapper";
 import lessonsData from "../lessonsData";
 import { MdArrowForward } from "react-icons/md";
+import { motion } from "framer-motion";
 
 const Media = () => {
   const { id } = useParams();
@@ -32,26 +33,48 @@ const Media = () => {
     return activeContent;
   };
 
+  const btn = {
+    hidden: { opacity: 0, x: -200 },
+    show: { opacity: 1, x: 0 },
+  };
+
   return (
     <>
       <TopBar title={title} />
       <BackBtn goto="./" />
       <MediaContainer>
         <MediaButtons>
-          {media.map((item) => (
-            <div
-              key={item.id}
-              className={activeContent === item.id ? "mm-btn active" : "mm-btn"}
-            >
-              <button className="title" data-id={item.id} onClick={setContent}>
-                <p>{item.id}</p>
-              </button>
-            </div>
-          ))}
+          {media.map((item) => {
+            return (
+              <motion.div
+                variants={btn}
+                key={item.id}
+                className={
+                  activeContent === item.id ? "mm-btn active" : "mm-btn"
+                }
+              >
+                <button
+                  className="title"
+                  data-id={item.id}
+                  onClick={setContent}
+                >
+                  <p>{item.id}</p>
+                </button>
+              </motion.div>
+            );
+          })}
         </MediaButtons>
         {!activeContent && (
           <InnerWrapper>
-            <h1>Click buttons to choose multimedia</h1>
+            <h1
+              onClick={() => {
+                setActiveContent(media[0].id);
+                console.log(activeContent);
+                return activeContent;
+              }}
+            >
+              Click HERE to start
+            </h1>
           </InnerWrapper>
         )}
         {media.map((item) => {
@@ -62,8 +85,8 @@ const Media = () => {
                   <InnerWrapper>
                     <div className="inner-area">
                       <div className="header">
-                        <h1>{item.subtitle}</h1>
-                        <h2>{item.subSubTitle}</h2>
+                        <h2>{item.subtitle}</h2>
+                        <h3>{item.subSubTitle}</h3>
                       </div>
                       <div className="goto-area">
                         <div></div>

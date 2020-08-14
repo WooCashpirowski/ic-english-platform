@@ -48,8 +48,7 @@ const Nav = styled.header`
         margin-top: 1rem;
       }
       h1 {
-        color: var(--color-main);
-        top: 4rem;
+        display: none;
       }
     }
   }

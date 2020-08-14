@@ -38,27 +38,36 @@ const Multimedia = () => {
       <BackBtn goto="./" />
       <MediaContainer>
         <MediaButtons>
-          {media.map((item) => (
-            <div
-              className={activeContent === item.id ? "mm-btn active" : "mm-btn"}
-              key={item.id}
-            >
-              <button className="title" data-id={item.id} onClick={setContent}>
-                <p>{item.id}</p>
-              </button>
-            </div>
-          ))}
+          {media.map((ep) => {
+            const item = {
+              hidden: { opacity: 0, x: -200 },
+              show: { opacity: 1, x: 0 },
+            };
+            return (
+              <motion.div
+                variants={item}
+                className={activeContent === ep.id ? "mm-btn active" : "mm-btn"}
+                key={ep.id}
+              >
+                <button className="title" data-id={ep.id} onClick={setContent}>
+                  <p>{ep.id}</p>
+                </button>
+              </motion.div>
+            );
+          })}
         </MediaButtons>
         {!activeContent && (
-          <motion.div
-            initial={{ y: 600, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.7 }}
-          >
-            <InnerWrapper>
-              <h1>Click buttons to choose multimedia</h1>
-            </InnerWrapper>
-          </motion.div>
+          <InnerWrapper>
+            <h1
+              onClick={() => {
+                setActiveContent(media[0].id);
+                console.log(activeContent);
+                return activeContent;
+              }}
+            >
+              Click HERE to start
+            </h1>
+          </InnerWrapper>
         )}
         {media.map((item) => {
           return (

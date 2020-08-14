@@ -11,4 +11,10 @@ export default styled.main`
   @media (max-width: 1280px) {
     flex-direction: column;
   }
+  @media (max-width: 1024px) {
+    margin-top: 2rem;
+  }
+  @media (max-width: 768px) {
+    margin-top: 1rem;
+  }
 `;

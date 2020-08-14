@@ -56,11 +56,11 @@ const Buttons = styled.div`
         margin-bottom: 0;
         height: 60px;
       }
-      @media (max-width: 768px) {
-        max-width: 120px;
+      @media (max-width: 851px) {
+        max-width: 110px;
         height: 40px;
       }
-      @media (max-width: 455px) {
+      @media (max-width: 667px) {
         max-width: 100px;
         max-height: 35px;
         margin: 1rem 0.5rem 0;
@@ -68,7 +68,7 @@ const Buttons = styled.div`
           font-size: 14px;
         }
       }
-      @media (max-width: 320px) {
+      @media (max-width: 568px) {
         max-width: 80px;
         margin: 1rem 0.3rem 0;
       }
@@ -89,7 +89,6 @@ const container = {
     x: 0,
     transition: {
       staggerChildren: 0.2,
-      delay: 0.5,
     },
   },
 };

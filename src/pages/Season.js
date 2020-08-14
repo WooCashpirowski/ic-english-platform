@@ -54,7 +54,7 @@ const Container = styled.section`
   }
   @media (max-width: 960px) and (orientation: landscape) {
     .react-multi-carousel-list {
-      padding-top: 4rem;
+      padding-top: 1rem;
       .card {
         height: 250px;
         min-width: 250px;
