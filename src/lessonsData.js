@@ -414,7 +414,7 @@ export default [
           },
           {
             id: "302m2",
-            location: "/multimedia/lessons/302m1/index.html",
+            location: "/multimedia/lessons/302m2/index.html",
             blog: false,
           },
           {
