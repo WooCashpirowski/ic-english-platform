@@ -8,42 +8,76 @@ import SelectionItem from "../components/SelectionItem";
 import RunLessons from "../assets/img/run.png";
 import Learn from "../assets/img/learn.png";
 import { motion } from "framer-motion";
+import MotionDiv from "../components/MotionDiv";
+
+const selectionVariants = {
+  initialOne: { x: -1000, opacity: 0 },
+  initialTwo: { y: 1000, opacity: 0 },
+  animateOne: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      delay: 0.5,
+      type: "spring",
+      stiffness: 100,
+      duration: 0.6,
+    },
+  },
+  animateTwo: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay: 0.6,
+      type: "spring",
+      stiffness: 100,
+      duration: 0.8,
+    },
+  },
+  exit: {
+    x: 1000,
+    opacity: 0,
+  },
+};
 
 const Trainer = () => {
   const { setTrainer } = useContext(AppContext);
   return (
     <>
       <TopBar title="Trainer" />
-      <BackBtn goto="/" onClick={() => setTrainer(false)} />
-      <Main>
-        <motion.div
-          animate={{ x: 0 }}
-          initial={{ x: -1000 }}
-          transition={{ type: "spring", stiffness: 100, duration: 0.5 }}
-        >
-          <SelectionItem
-            img={RunLessons}
-            alt="run lessons"
-            style={{ "--i": -7 }}
-            goto="/seasons"
-            state={() => {
-              setTrainer(true);
-            }}
-          />
-        </motion.div>
-        <motion.div
-          animate={{ y: 0 }}
-          initial={{ y: 1000 }}
-          transition={{ type: "spring", stiffness: 50, duration: 0.7 }}
-        >
-          <SelectionItem
-            img={Learn}
-            alt="learn more"
-            style={{ "--i": -13 }}
-            goto="/trainer/learn-more"
-          />
-        </motion.div>
-      </Main>
+      <MotionDiv>
+        <BackBtn goto="/" onClick={() => setTrainer(false)} />
+        <Main>
+          <motion.div
+            variants={selectionVariants}
+            initial="initialOne"
+            animate="animateOne"
+            exit="exit"
+          >
+            <SelectionItem
+              img={RunLessons}
+              alt="run lessons"
+              style={{ "--i": -7 }}
+              goto="/seasons"
+              state={() => {
+                setTrainer(true);
+              }}
+            />
+          </motion.div>
+          <motion.div
+            variants={selectionVariants}
+            initial="initialTwo"
+            animate="animateTwo"
+            exit="exit"
+          >
+            <SelectionItem
+              img={Learn}
+              alt="learn more"
+              style={{ "--i": -13 }}
+              goto="/trainer/learn-more"
+            />
+          </motion.div>
+        </Main>
+      </MotionDiv>
       <Footer />
     </>
   );

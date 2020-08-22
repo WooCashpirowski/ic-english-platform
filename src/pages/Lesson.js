@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import lessonsData from "../lessonsData";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import MotionDiv from "../components/MotionDiv";
 
 const Container = styled.main`
   max-width: 80%;
@@ -78,19 +79,19 @@ const Container = styled.main`
 `;
 
 const container = {
-  hidden: { opacity: 0, x: -300 },
-  show: {
+  initial: { opacity: 0, x: -300 },
+  animate: {
     opacity: 1,
     x: 0,
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.2,
     },
   },
 };
 
-const item = {
-  hidden: { opacity: 0, x: -300 },
-  show: { opacity: 1, x: 0 },
+const itemVariants = {
+  initial: { opacity: 0, x: -300 },
+  animate: { opacity: 1, x: 0 },
 };
 
 const Lesson = () => {
@@ -101,31 +102,28 @@ const Lesson = () => {
   return (
     <>
       <TopBar title={title} />
-      <BackBtn goto="/trainer/lessons/" />
-      <Container>
-        <motion.div
-          className="container"
-          variants={container}
-          initial="hidden"
-          animate="show"
-        >
-          {lessons.map((lesson) => (
-            <motion.div
-              variants={item}
-              key={lesson.id}
-              className={title === "ANDRAGOGY" ? "card big" : "card"}
-            >
-              <Link
-                to={`/trainer/lessons/${slug}/${lesson.id}`}
-                className="card-title"
+      <MotionDiv>
+        <BackBtn goto="/trainer/lessons/" />
+        <Container>
+          <motion.div className="container" variants={container}>
+            {lessons.map((lesson) => (
+              <motion.div
+                variants={itemVariants}
+                key={lesson.id}
+                className={title === "ANDRAGOGY" ? "card big" : "card"}
               >
-                <h1>{lesson.title}</h1>
-                {lesson.subtitle && <h1>{lesson.subtitle}</h1>}
-              </Link>
-            </motion.div>
-          ))}
-        </motion.div>
-      </Container>
+                <Link
+                  to={`/trainer/lessons/${slug}/${lesson.id}`}
+                  className="card-title"
+                >
+                  <h1>{lesson.title}</h1>
+                  {lesson.subtitle && <h1>{lesson.subtitle}</h1>}
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+        </Container>
+      </MotionDiv>
       <Footer />
     </>
   );

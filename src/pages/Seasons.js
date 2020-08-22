@@ -8,6 +8,7 @@ import seasonsData from "../seasonsData";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
+import MotionDiv from "../components/MotionDiv";
 
 const Card = styled.div`
   min-height: 300px;
@@ -76,7 +77,7 @@ const Card = styled.div`
   }
 `;
 
-const container = {
+const mainVariants = {
   hidden: { opacity: 1, scale: 1 },
   show: {
     opacity: 1,
@@ -85,11 +86,29 @@ const container = {
       staggerChildren: 0.5,
     },
   },
+  exit: {
+    opacity: 0,
+    scale: 0,
+  },
 };
 
-const item = {
+const itemVariants = {
   hidden: { opacity: 0, scale: 0 },
-  show: { opacity: 1, scale: 1 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 200,
+    },
+  },
+  exit: {
+    opacity: 0,
+    scale: 0,
+    transition: {
+      duration: 1,
+    },
+  },
 };
 
 const Seasons = () => {
@@ -97,44 +116,43 @@ const Seasons = () => {
   return (
     <>
       <TopBar title="Choose your level" />
-      <BackBtn goto={isTrainer ? "/trainer" : "/"} />
-      <Main>
-        <motion.div
-          className="select"
-          variants={container}
-          initial="hidden"
-          animate="show"
-        >
-          {seasonsData.map((season) => {
-            return (
-              <motion.div
-                key={season.season}
-                variants={item}
-                transition={{ type: "spring", stiffness: 200 }}
-              >
-                <Card>
-                  <h2>Season {season.season}</h2>
-                  <h1>{season.level}</h1>
-                  <Link
-                    to={`/seasons/${season.season}`}
-                    className="btn btn-light"
-                  >
-                    Go to multimedia
-                  </Link>
-                  {isTrainer && (
-                    <a
-                      className="btn btn-outline-light"
-                      href={`http://ic-english.eu/platforma/assets/resources/s0${season.season}.zip`}
+      <MotionDiv>
+        <BackBtn goto={isTrainer ? "/trainer" : "/"} />
+        <Main>
+          <motion.div
+            className="select"
+            variants={mainVariants}
+            initial="hidden"
+            animate="show"
+            exit="exit"
+          >
+            {seasonsData.map((season) => {
+              return (
+                <motion.div key={season.season} variants={itemVariants}>
+                  <Card>
+                    <h2>Season {season.season}</h2>
+                    <h1>{season.level}</h1>
+                    <Link
+                      to={`/seasons/${season.season}`}
+                      className="btn btn-light"
                     >
-                      Download Resources
-                    </a>
-                  )}
-                </Card>
-              </motion.div>
-            );
-          })}
-        </motion.div>
-      </Main>
+                      Go to multimedia
+                    </Link>
+                    {isTrainer && (
+                      <a
+                        className="btn btn-outline-light"
+                        href={`http://ic-english.eu/platforma/assets/resources/s0${season.season}.zip`}
+                      >
+                        Download Resources
+                      </a>
+                    )}
+                  </Card>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        </Main>
+      </MotionDiv>
       <Footer />
     </>
   );

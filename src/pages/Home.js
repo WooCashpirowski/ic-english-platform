@@ -7,51 +7,74 @@ import HomeTrainer from "../assets/img/home-teacher.png";
 import HomeLearner from "../assets/img/home-student.png";
 import SelectionItem from "../components/SelectionItem";
 import { motion } from "framer-motion";
+import MotionDiv from "../components/MotionDiv";
+
+const selectionVariants = {
+  initial: { x: -1000, opacity: 0 },
+  animateOne: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      delay: 0.5,
+      type: "spring",
+      stiffness: 100,
+      duration: 0.8,
+    },
+  },
+  animateTwo: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      delay: 0.6,
+      type: "spring",
+      stiffness: 150,
+      duration: 0.6,
+    },
+  },
+  exit: {
+    x: 1000,
+    opacity: 0,
+  },
+};
 
 const Home = () => {
   const { setTrainer } = useContext(AppContext);
   return (
     <>
       <TopBar title="Welcome to IC-English Platform" />
-      <Main>
-        <motion.div
-          animate={{ x: 0 }}
-          initial={{ x: -1000 }}
-          transition={{
-            delay: 0.2,
-            type: "spring",
-            stiffness: 100,
-            duration: 0.8,
-          }}
-        >
-          <SelectionItem
-            img={HomeTrainer}
-            alt="trainer"
-            style={{ "--i": 3 }}
-            goto="/trainer"
-          />
-        </motion.div>
-        <motion.div
-          animate={{ x: 0 }}
-          initial={{ x: -1500 }}
-          transition={{
-            delay: 0.4,
-            type: "spring",
-            stiffness: 100,
-            duration: 0.6,
-          }}
-        >
-          <SelectionItem
-            img={HomeLearner}
-            alt="learner"
-            style={{ "--i": -5 }}
-            goto="/seasons"
-            state={() => {
-              setTrainer(false);
-            }}
-          />
-        </motion.div>
-      </Main>
+      <MotionDiv>
+        <Main>
+          <motion.div
+            variants={selectionVariants}
+            initial="initial"
+            animate="animateOne"
+            exit="exit"
+          >
+            <SelectionItem
+              img={HomeTrainer}
+              alt="trainer"
+              style={{ "--i": 3 }}
+              goto="/trainer"
+            />
+          </motion.div>
+          <motion.div
+            variants={selectionVariants}
+            initial="initial"
+            animate="animateTwo"
+            exit="exit"
+          >
+            <SelectionItem
+              img={HomeLearner}
+              alt="learner"
+              style={{ "--i": -5 }}
+              goto="/seasons"
+              state={() => {
+                setTrainer(false);
+              }}
+            />
+          </motion.div>
+        </Main>
+      </MotionDiv>
       <Footer />
     </>
   );

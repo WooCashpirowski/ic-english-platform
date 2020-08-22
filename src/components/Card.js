@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Card = styled.div`
+export default styled.div`
   min-height: 300px;
   width: 300px;
   align-items: center;
@@ -67,5 +67,3 @@ const Card = styled.div`
     }
   }
 `;
-
-export default Card;

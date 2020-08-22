@@ -64,8 +64,9 @@ const TopBar = ({ title }) => {
           </Link>
         </div>
         <motion.div
-          animate={{ opacity: 1, scale: 1 }}
           initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ type: "spring", delay: 0.8, stiffness: 120 }}
         >
           <h1>{title}</h1>
         </motion.div>

@@ -19,13 +19,12 @@ const Button = styled.div`
   @media (max-width: 651px) {
     margin-left: 1rem;
   }
-  }
 `;
 
 const BackBtn = ({ goto }) => {
   return (
     <Button>
-      <Link to={goto || "#"}>
+      <Link to={goto}>
         <MdArrowBack className="c-main" />
       </Link>
     </Button>

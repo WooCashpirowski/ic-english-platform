@@ -100,6 +100,7 @@ const MediaButtons = ({ children }) => {
         variants={container}
         initial="hidden"
         animate="show"
+        exit="hidden"
         className="container"
       >
         {children}

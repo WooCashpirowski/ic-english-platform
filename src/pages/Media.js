@@ -11,6 +11,7 @@ import InnerWrapper from "../components/InnerWrapper";
 import lessonsData from "../lessonsData";
 import { MdArrowForward } from "react-icons/md";
 import { motion } from "framer-motion";
+import MotionDiv from "../components/MotionDiv";
 
 const Media = () => {
   const { id } = useParams();
@@ -41,80 +42,82 @@ const Media = () => {
   return (
     <>
       <TopBar title={title} />
-      <BackBtn goto="./" />
-      <MediaContainer>
-        <MediaButtons>
+      <MotionDiv>
+        <BackBtn goto="./" />
+        <MediaContainer>
+          <MediaButtons>
+            {media.map((item) => {
+              return (
+                <motion.div
+                  variants={btn}
+                  key={item.id}
+                  className={
+                    activeContent === item.id ? "mm-btn active" : "mm-btn"
+                  }
+                >
+                  <button
+                    className="title"
+                    data-id={item.id}
+                    onClick={setContent}
+                  >
+                    <p>{item.id}</p>
+                  </button>
+                </motion.div>
+              );
+            })}
+          </MediaButtons>
+          {!activeContent && (
+            <InnerWrapper>
+              <h1
+                onClick={() => {
+                  setActiveContent(media[0].id);
+                  console.log(activeContent);
+                  return activeContent;
+                }}
+              >
+                Click HERE to start
+              </h1>
+            </InnerWrapper>
+          )}
           {media.map((item) => {
             return (
-              <motion.div
-                variants={btn}
-                key={item.id}
-                className={
-                  activeContent === item.id ? "mm-btn active" : "mm-btn"
-                }
-              >
-                <button
-                  className="title"
-                  data-id={item.id}
-                  onClick={setContent}
-                >
-                  <p>{item.id}</p>
-                </button>
-              </motion.div>
+              activeContent === item.id && (
+                <MediaWrapper key={item.id} id={item.id}>
+                  {item.blog ? (
+                    <InnerWrapper>
+                      <div className="inner-area">
+                        <div className="header">
+                          <h2>{item.subtitle}</h2>
+                          <h3>{item.subSubTitle}</h3>
+                        </div>
+                        <div className="goto-area">
+                          <div></div>
+                          <a
+                            className="goto"
+                            href={item.location}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <h2>Go to our blog</h2>
+                            <MdArrowForward />
+                          </a>
+                        </div>
+                      </div>
+                    </InnerWrapper>
+                  ) : (
+                    <Iframe
+                      url={`${url}${item.location}`}
+                      frameBorder="0"
+                      title={item.title}
+                      className="i-frame"
+                    />
+                  )}
+                </MediaWrapper>
+              )
             );
           })}
-        </MediaButtons>
-        {!activeContent && (
-          <InnerWrapper>
-            <h1
-              onClick={() => {
-                setActiveContent(media[0].id);
-                console.log(activeContent);
-                return activeContent;
-              }}
-            >
-              Click HERE to start
-            </h1>
-          </InnerWrapper>
-        )}
-        {media.map((item) => {
-          return (
-            activeContent === item.id && (
-              <MediaWrapper key={item.id} id={item.id}>
-                {item.blog ? (
-                  <InnerWrapper>
-                    <div className="inner-area">
-                      <div className="header">
-                        <h2>{item.subtitle}</h2>
-                        <h3>{item.subSubTitle}</h3>
-                      </div>
-                      <div className="goto-area">
-                        <div></div>
-                        <a
-                          className="goto"
-                          href={item.location}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <h2>Go to our blog</h2>
-                          <MdArrowForward />
-                        </a>
-                      </div>
-                    </div>
-                  </InnerWrapper>
-                ) : (
-                  <Iframe
-                    url={`${url}${item.location}`}
-                    frameBorder="0"
-                    title={item.title}
-                    className="i-frame"
-                  />
-                )}
-              </MediaWrapper>
-            )
-          );
-        })}
-      </MediaContainer>
+        </MediaContainer>
+      </MotionDiv>
       <Footer />
     </>
   );

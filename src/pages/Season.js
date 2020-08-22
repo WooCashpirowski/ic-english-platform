@@ -8,6 +8,7 @@ import styled from "styled-components";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { motion } from "framer-motion";
+import MotionDiv from "../components/MotionDiv";
 
 const Container = styled.section`
   height: calc(100vh - 50px);
@@ -103,29 +104,34 @@ const Season = () => {
   return (
     <>
       <TopBar title={`Season ${id}`} />
-      <BackBtn goto="/seasons" />
-      <Container>
-        <Carousel
-          responsive={responsive}
-          keyBoardControl={true}
-          focusOnSelect={true}
-        >
-          {episodes.map((episode) => (
-            <motion.div
-              className="card"
-              key={episode.id}
-              initial={{ opacity: 0, x: -1000 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.6 }}
-            >
-              <Link to={`/seasons/${id}/${episode.id}`} className="card-title">
-                <h1>{episode.epNo}</h1>
-                <p>{episode.title}</p>
-              </Link>
-            </motion.div>
-          ))}
-        </Carousel>
-      </Container>
+      <MotionDiv>
+        <BackBtn goto="/seasons" />
+        <Container>
+          <Carousel
+            responsive={responsive}
+            keyBoardControl={true}
+            focusOnSelect={true}
+          >
+            {episodes.map((episode) => (
+              <motion.div
+                className="card"
+                key={episode.id}
+                initial={{ opacity: 0, x: -1000 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 1000 }}
+              >
+                <Link
+                  to={`/seasons/${id}/${episode.id}`}
+                  className="card-title"
+                >
+                  <h1>{episode.epNo}</h1>
+                  <p>{episode.title}</p>
+                </Link>
+              </motion.div>
+            ))}
+          </Carousel>
+        </Container>
+      </MotionDiv>
       <Footer />
     </>
   );

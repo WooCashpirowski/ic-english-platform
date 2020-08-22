@@ -10,6 +10,12 @@ import Iframe from "react-iframe";
 import InnerWrapper from "../components/InnerWrapper";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
+import MotionDiv from "../components/MotionDiv";
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -200 },
+  show: { opacity: 1, x: 0 },
+};
 
 const Multimedia = () => {
   const { id } = useParams();
@@ -35,66 +41,71 @@ const Multimedia = () => {
   return (
     <>
       <TopBar title={title} />
-      <BackBtn goto="./" />
-      <MediaContainer>
-        <MediaButtons>
-          {media.map((ep) => {
-            const item = {
-              hidden: { opacity: 0, x: -200 },
-              show: { opacity: 1, x: 0 },
-            };
-            return (
-              <motion.div
-                variants={item}
-                className={activeContent === ep.id ? "mm-btn active" : "mm-btn"}
-                key={ep.id}
+      <MotionDiv>
+        <BackBtn goto="./" />
+        <MediaContainer>
+          <MediaButtons>
+            {media.map((ep) => {
+              return (
+                <motion.div
+                  variants={itemVariants}
+                  exit="hidden"
+                  className={
+                    activeContent === ep.id ? "mm-btn active" : "mm-btn"
+                  }
+                  key={ep.id}
+                >
+                  <button
+                    className="title"
+                    data-id={ep.id}
+                    onClick={setContent}
+                  >
+                    <p>{ep.id}</p>
+                  </button>
+                </motion.div>
+              );
+            })}
+          </MediaButtons>
+          {!activeContent && (
+            <InnerWrapper>
+              <h1
+                onClick={() => {
+                  setActiveContent(media[0].id);
+                  console.log(activeContent);
+                  return activeContent;
+                }}
               >
-                <button className="title" data-id={ep.id} onClick={setContent}>
-                  <p>{ep.id}</p>
-                </button>
-              </motion.div>
+                Click HERE to start
+              </h1>
+            </InnerWrapper>
+          )}
+          {media.map((item) => {
+            return (
+              activeContent === item.id && (
+                <MediaWrapper key={item.id} id={item.id}>
+                  {item.audio ? (
+                    <InnerWrapper>
+                      <div className="inner-area">
+                        <audio controls src={`${url}${item.location}`}>
+                          Your browser does not support the
+                          <code>audio</code> element.
+                        </audio>
+                      </div>
+                    </InnerWrapper>
+                  ) : (
+                    <Iframe
+                      url={`${url}${item.location}`}
+                      frameBorder="0"
+                      title={item.title}
+                      className="i-frame"
+                    />
+                  )}
+                </MediaWrapper>
+              )
             );
           })}
-        </MediaButtons>
-        {!activeContent && (
-          <InnerWrapper>
-            <h1
-              onClick={() => {
-                setActiveContent(media[0].id);
-                console.log(activeContent);
-                return activeContent;
-              }}
-            >
-              Click HERE to start
-            </h1>
-          </InnerWrapper>
-        )}
-        {media.map((item) => {
-          return (
-            activeContent === item.id && (
-              <MediaWrapper key={item.id} id={item.id}>
-                {item.audio ? (
-                  <InnerWrapper>
-                    <div className="inner-area">
-                      <audio controls src={`${url}${item.location}`}>
-                        Your browser does not support the
-                        <code>audio</code> element.
-                      </audio>
-                    </div>
-                  </InnerWrapper>
-                ) : (
-                  <Iframe
-                    url={`${url}${item.location}`}
-                    frameBorder="0"
-                    title={item.title}
-                    className="i-frame"
-                  />
-                )}
-              </MediaWrapper>
-            )
-          );
-        })}
-      </MediaContainer>
+        </MediaContainer>
+      </MotionDiv>
       <Footer />
     </>
   );

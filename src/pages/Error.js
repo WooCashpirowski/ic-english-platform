@@ -3,6 +3,7 @@ import TopBar from "../components/TopBar";
 import Footer from "../components/Footer";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import MotionDiv from "../components/MotionDiv";
 
 const Wrapper = styled.div`
   display: flex;
@@ -31,10 +32,12 @@ const Error = () => {
   return (
     <>
       <TopBar title="404" />
-      <Wrapper>
-        <h1>The site you're trying to reach doesn't exist.</h1>
-        <Link to="/">home page</Link>
-      </Wrapper>
+      <MotionDiv>
+        <Wrapper>
+          <h1>The site you're trying to reach doesn't exist.</h1>
+          <Link to="/">home page</Link>
+        </Wrapper>
+      </MotionDiv>
       <Footer />
     </>
   );
