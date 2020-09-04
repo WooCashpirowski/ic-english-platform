@@ -11,11 +11,12 @@ import Seasons from "./pages/Seasons";
 import Error from "./pages/Error";
 import Multimedia from "./pages/Multimedia";
 import { AnimatePresence } from "framer-motion";
+import bg from "./assets/img/bg.jpg";
 
 function App() {
   const location = useLocation();
   return (
-    <>
+    <div style={{ backgroundImage: `url(${bg})`, minHeight: "100vh" }}>
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.key}>
           <Route exact path="/">
@@ -50,7 +51,7 @@ function App() {
           </Route>
         </Switch>
       </AnimatePresence>
-    </>
+    </div>
   );
 }
 

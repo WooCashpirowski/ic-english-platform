@@ -112,8 +112,6 @@ const Wrapper = styled.div`
     h1 {
       font-size: 1.2rem;
       margin: 4rem 1rem;
-      color: var(--color-main);
-      border: 1px solid var(--color-main);
     }
   }
 `;

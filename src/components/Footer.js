@@ -6,6 +6,7 @@ const FooterStyled = styled.footer`
   padding: 1rem 2rem 0.5rem;
   margin: auto;
   width: 100%;
+  /* background: rgba(237, 233, 233, 0.1); */
   .footer {
     display: flex;
     justify-content: space-evenly;
@@ -14,6 +15,7 @@ const FooterStyled = styled.footer`
     opacity: 1;
     transform: scale(1);
     transition: all 0.8s ease-in-out;
+
     img {
       width: 310px;
       margin-left: -1.2rem;
@@ -43,7 +45,7 @@ const Footer = () => {
           <img src={erasmusLogo} alt="erasmus-plus" />
         </div>
         <div className="funding-info">
-          <p>
+          <p className="c-light">
             This project has been funded with support from the European
             Commission. This publication reflects the views only of the author,
             and the Commission cannot be held responsible for any use which may

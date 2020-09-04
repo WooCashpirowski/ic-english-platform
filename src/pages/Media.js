@@ -71,7 +71,6 @@ const Media = () => {
               <h1
                 onClick={() => {
                   setActiveContent(media[0].id);
-                  console.log(activeContent);
                   return activeContent;
                 }}
               >
