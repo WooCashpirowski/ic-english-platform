@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import MotionDiv from "../components/MotionDiv";
+import { prefix } from "../prefix";
 
 const Wrapper = styled.div`
   display: flex;
@@ -35,7 +36,7 @@ const Error = () => {
       <MotionDiv>
         <Wrapper>
           <h1>The site you're trying to reach doesn't exist.</h1>
-          <Link to="/">home page</Link>
+          <Link to={prefix}>home page</Link>
         </Wrapper>
       </MotionDiv>
       <Footer />

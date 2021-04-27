@@ -9,6 +9,7 @@ import RunLessons from "../assets/img/run.png";
 import Learn from "../assets/img/learn.png";
 import { motion } from "framer-motion";
 import MotionDiv from "../components/MotionDiv";
+import { prefix } from "../prefix";
 
 const selectionVariants = {
   initialOne: { x: -1000, opacity: 0 },
@@ -45,7 +46,7 @@ const Trainer = () => {
     <>
       <TopBar title="Trainer" />
       <MotionDiv>
-        <BackBtn goto="/" onClick={() => setTrainer(false)} />
+        <BackBtn goto="./" onClick={() => setTrainer(false)} />
         <Main>
           <motion.div
             variants={selectionVariants}
@@ -57,7 +58,7 @@ const Trainer = () => {
               img={RunLessons}
               alt="run lessons"
               style={{ "--i": -7 }}
-              goto="/seasons"
+              goto={`${prefix}/seasons`}
               state={() => {
                 setTrainer(true);
               }}
@@ -73,7 +74,7 @@ const Trainer = () => {
               img={Learn}
               alt="learn more"
               style={{ "--i": -13 }}
-              goto="/trainer/learn-more"
+              goto={`${prefix}/trainer/learn-more`}
             />
           </motion.div>
         </Main>

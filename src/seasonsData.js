@@ -16,6 +16,11 @@ export default [
             id: "s01e01q2",
             location: "/multimedia/s01/s01e01q2/index.html",
           },
+          {
+            id: "s01e01m1",
+            location: "/multimedia/audio/S01E01M1.mp3",
+            audio: true,
+          },
         ],
       },
       {
@@ -35,6 +40,21 @@ export default [
             id: "s01e02q3",
             location: "/multimedia/s01/s01e02q3/index.html",
           },
+          {
+            id: "s01e02m1",
+            location: "/multimedia/audio/S01E02M1.mp3",
+            audio: true,
+          },
+          {
+            id: "s01e02m2",
+            location: "/multimedia/audio/S01E02M2.mp3",
+            audio: true,
+          },
+          {
+            id: "s01e02m3",
+            location: "/multimedia/audio/S01E02M3.mp3",
+            audio: true,
+          },
         ],
       },
       {
@@ -50,6 +70,11 @@ export default [
             id: "s01e03q2",
             location: "/multimedia/s01/s01e03q2/index.html",
           },
+          {
+            id: "s01e03m1",
+            location: "/multimedia/audio/S01E03M1.mp3",
+            audio: true,
+          },
         ],
       },
       {
@@ -64,6 +89,11 @@ export default [
           {
             id: "s01e04q2",
             location: "/multimedia/s01/s01e04q2/index.html",
+          },
+          {
+            id: "s01e04m1",
+            location: "/multimedia/audio/S01E04M1.mp3",
+            audio: true,
           },
         ],
       },
@@ -84,6 +114,11 @@ export default [
             id: "s01e05q3",
             location: "/multimedia/s01/s01e05q3/index.html",
           },
+          {
+            id: "s01e05m1",
+            location: "/multimedia/audio/S01E05M1.mp3",
+            audio: true,
+          },
         ],
       },
       {
@@ -98,6 +133,11 @@ export default [
           {
             id: "s01e06q2",
             location: "/multimedia/s01/s01e06q2/index.html",
+          },
+          {
+            id: "s01e06m1",
+            location: "/multimedia/audio/S01E06M1.mp3",
+            audio: true,
           },
         ],
       },
@@ -118,6 +158,11 @@ export default [
             id: "s01e07q3",
             location: "/multimedia/s01/s01e07q3/index.html",
           },
+          {
+            id: "s01e07m1",
+            location: "/multimedia/audio/S01E07M1.mp3",
+            audio: true,
+          },
         ],
       },
       {
@@ -132,6 +177,11 @@ export default [
           {
             id: "s01e08q2",
             location: "/multimedia/s01/s01e08q2/index.html",
+          },
+          {
+            id: "s01e08m1",
+            location: "/multimedia/audio/S01E08M1.mp3",
+            audio: true,
           },
         ],
       },
@@ -152,6 +202,11 @@ export default [
             id: "s01e09q3",
             location: "/multimedia/s01/s01e09q3/index.html",
           },
+          {
+            id: "s01e09m1",
+            location: "/multimedia/audio/S01E09M1.mp3",
+            audio: true,
+          },
         ],
       },
       {
@@ -171,6 +226,11 @@ export default [
             id: "s01e10q3",
             location: "/multimedia/s01/s01e10q3/index.html",
           },
+          {
+            id: "s01e10m1",
+            location: "/multimedia/audio/S01E10M1.mp3",
+            audio: true,
+          },
         ],
       },
       {
@@ -186,6 +246,11 @@ export default [
             id: "s01e11q2",
             location: "/multimedia/s01/s01e11q2/index.html",
           },
+          {
+            id: "s01e11m1",
+            location: "/multimedia/audio/S01E11M1.mp3",
+            audio: true,
+          },
         ],
       },
       {
@@ -200,6 +265,11 @@ export default [
           {
             id: "s01e12q2",
             location: "/multimedia/s01/s01e12q2/index.html",
+          },
+          {
+            id: "s01e12m1",
+            location: "/multimedia/audio/S01E12M1.mp3",
+            audio: true,
           },
         ],
       },

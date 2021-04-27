@@ -9,6 +9,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { motion } from "framer-motion";
 import MotionDiv from "../components/MotionDiv";
+import { prefix } from "../prefix";
 
 const Container = styled.section`
   height: calc(100vh - 50px);
@@ -105,7 +106,7 @@ const Season = () => {
     <>
       <TopBar title={`Season ${id}`} />
       <MotionDiv>
-        <BackBtn goto="/seasons" />
+        <BackBtn goto={`${prefix}/seasons`} />
         <Container>
           <Carousel
             responsive={responsive}
@@ -121,7 +122,7 @@ const Season = () => {
                 exit={{ opacity: 0, x: 1000 }}
               >
                 <Link
-                  to={`/seasons/${id}/${episode.id}`}
+                  to={`${prefix}/seasons/${id}/${episode.id}`}
                   className="card-title"
                 >
                   <h1>{episode.epNo}</h1>

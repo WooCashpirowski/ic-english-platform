@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 import MotionDiv from "../components/MotionDiv";
+import { prefix } from "../prefix";
 
 const cardVariants = {
   initial: {
@@ -52,7 +53,7 @@ const LearnMore = () => {
     <>
       <TopBar title="Learn more about the method" />
       <MotionDiv>
-        <BackBtn goto="/trainer" />
+        <BackBtn goto={`${prefix}/trainer`} />
         <Main>
           <motion.div
             variants={cardVariants}
@@ -61,10 +62,7 @@ const LearnMore = () => {
             initial="initial"
           >
             <Card>
-              <a
-                href="http://ic-english.eu/platforma/assets/resources/ebook_full.zip"
-                download
-              >
+              <a href="https://ic-english.eu/ebook_full/" download>
                 <h2>Teachers Manual</h2>
               </a>
             </Card>
@@ -76,7 +74,7 @@ const LearnMore = () => {
             exit="exit"
           >
             <Card>
-              <Link to="/trainer/lessons">
+              <Link to={`${prefix}/trainer/lessons`}>
                 <h2>E-learning Lessons</h2>
               </Link>
             </Card>

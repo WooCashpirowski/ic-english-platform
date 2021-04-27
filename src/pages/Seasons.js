@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 import MotionDiv from "../components/MotionDiv";
+import { prefix } from "../prefix";
 
 const Card = styled.div`
   min-height: 300px;
@@ -117,7 +118,7 @@ const Seasons = () => {
     <>
       <TopBar title="Choose your level" />
       <MotionDiv>
-        <BackBtn goto={isTrainer ? "/trainer" : "/"} />
+        <BackBtn goto={isTrainer ? `${prefix}/trainer` : prefix} />
         <Main>
           <motion.div
             className="select"
@@ -133,7 +134,7 @@ const Seasons = () => {
                     <h2>Season {season.season}</h2>
                     <h1>{season.level}</h1>
                     <Link
-                      to={`/seasons/${season.season}`}
+                      to={`${prefix}/seasons/${season.season}`}
                       className="btn btn-light"
                     >
                       Go to multimedia
@@ -141,7 +142,7 @@ const Seasons = () => {
                     {isTrainer && (
                       <a
                         className="btn btn-outline-light"
-                        href={`http://ic-english.eu/platforma/assets/resources/s0${season.season}.zip`}
+                        href={`https://ic-english.eu/wp-content/uploads/2021/01/s0${season.season}.zip`}
                       >
                         Download Resources
                       </a>

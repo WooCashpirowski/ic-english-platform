@@ -8,6 +8,7 @@ import HomeLearner from "../assets/img/home-student.png";
 import SelectionItem from "../components/SelectionItem";
 import { motion } from "framer-motion";
 import MotionDiv from "../components/MotionDiv";
+import { prefix } from "../prefix";
 
 const selectionVariants = {
   initial: { x: -1000, opacity: 0 },
@@ -54,7 +55,7 @@ const Home = () => {
               img={HomeTrainer}
               alt="trainer"
               style={{ "--i": 3 }}
-              goto="/trainer"
+              goto={`${prefix}/trainer`}
             />
           </motion.div>
           <motion.div
@@ -67,7 +68,7 @@ const Home = () => {
               img={HomeLearner}
               alt="learner"
               style={{ "--i": -5 }}
-              goto="/seasons"
+              goto={`${prefix}/seasons`}
               state={() => {
                 setTrainer(false);
               }}

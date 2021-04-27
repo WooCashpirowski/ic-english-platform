@@ -7,6 +7,7 @@ import lessonsData from "../lessonsData";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import MotionDiv from "../components/MotionDiv";
+import { prefix } from "../prefix";
 
 const Container = styled.main`
   max-width: 80%;
@@ -103,7 +104,7 @@ const Lesson = () => {
     <>
       <TopBar title={title} />
       <MotionDiv>
-        <BackBtn goto="/trainer/lessons/" />
+        <BackBtn goto={`${prefix}/trainer/lessons`} />
         <Container>
           <motion.div className="container" variants={container}>
             {lessons.map((lesson) => (
@@ -113,7 +114,7 @@ const Lesson = () => {
                 className={title === "ANDRAGOGY" ? "card big" : "card"}
               >
                 <Link
-                  to={`/trainer/lessons/${slug}/${lesson.id}`}
+                  to={`${prefix}/trainer/lessons/${slug}/${lesson.id}`}
                   className="card-title"
                 >
                   <h1>{lesson.title}</h1>

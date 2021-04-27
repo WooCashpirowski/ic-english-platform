@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 import MotionDiv from "../components/MotionDiv";
+import { prefix } from "../prefix";
 
 const Container = styled.main`
   min-height: calc(100vh - 150px);
@@ -37,7 +38,7 @@ const Lessons = () => {
     <>
       <TopBar title="Dive into IC-English" />
       <MotionDiv>
-        <BackBtn goto="/trainer/learn-more" />
+        <BackBtn goto={`${prefix}/trainer/learn-more`} />
         <Container>
           {lessonsData.map((lesson) => {
             const moduleInt = parseInt(lesson.module);
@@ -60,7 +61,7 @@ const Lessons = () => {
               >
                 <Card className="card">
                   <Link
-                    to={`/trainer/lessons/${lesson.slug}`}
+                    to={`${prefix}/trainer/lessons/${lesson.slug}`}
                     className="card-title"
                   >
                     <h1>{lesson.title}</h1>

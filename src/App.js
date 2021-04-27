@@ -12,6 +12,7 @@ import Error from "./pages/Error";
 import Multimedia from "./pages/Multimedia";
 import { AnimatePresence } from "framer-motion";
 import bg from "./assets/img/bg.jpg";
+import { prefix } from "./prefix";
 
 function App() {
   const location = useLocation();
@@ -19,34 +20,34 @@ function App() {
     <div style={{ backgroundImage: `url(${bg})`, minHeight: "100vh" }}>
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.key}>
-          <Route exact path="/">
+          <Route exact path={`${prefix}`}>
             <Home />
           </Route>
-          <Route exact path="/trainer">
+          <Route exact path={`${prefix}/trainer`}>
             <Trainer />
           </Route>
-          <Route path="/trainer/learn-more">
+          <Route path={`${prefix}/trainer/learn-more`}>
             <LearnMore />
           </Route>
-          <Route exact path="/trainer/lessons">
+          <Route exact path={`${prefix}/trainer/lessons`}>
             <Lessons />
           </Route>
-          <Route exact path="/trainer/lessons/:slug">
+          <Route exact path={`${prefix}/trainer/lessons/:slug`}>
             <Lesson />
           </Route>
-          <Route path="/trainer/lessons/:slug/:id">
+          <Route path={`${prefix}/trainer/lessons/:slug/:id`}>
             <Media />
           </Route>
-          <Route exact path="/seasons">
+          <Route exact path={`${prefix}/seasons`}>
             <Seasons />
           </Route>
-          <Route exact path="/seasons/:id">
+          <Route exact path={`${prefix}/seasons/:id`}>
             <Season />
           </Route>
-          <Route path="/seasons/:id/:id">
+          <Route path={`${prefix}/seasons/:id/:id`}>
             <Multimedia />
           </Route>
-          <Route path="*">
+          <Route path={`${prefix}/*`}>
             <Error />
           </Route>
         </Switch>

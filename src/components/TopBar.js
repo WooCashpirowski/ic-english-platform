@@ -3,6 +3,7 @@ import styled from "styled-components";
 import logo from "../assets/img/logo.png";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { prefix } from "../prefix";
 
 const Nav = styled.header`
   top: 0;
@@ -59,7 +60,7 @@ const TopBar = ({ title }) => {
     <Nav>
       <nav>
         <div className="logo">
-          <Link to="/">
+          <Link to={prefix}>
             <img src={logo} alt="ic-english" />
           </Link>
         </div>
